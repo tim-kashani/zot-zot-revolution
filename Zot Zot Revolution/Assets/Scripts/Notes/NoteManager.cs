@@ -62,12 +62,12 @@ public class NoteManager : MonoBehaviour
 
     public void PressNote(int i)
     {
-
+        Debug.Log("Pressed note " + i);
     }
 
     public void ReleaseNote(int i)
     {
-
+        Debug.Log("Released note " + i);
     }
 
     IEnumerator StartMusicDelayed()
