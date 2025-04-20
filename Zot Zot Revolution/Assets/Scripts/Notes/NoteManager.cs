@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class NoteManager : MonoBehaviour
 {
+    [Header("Debug")]
+    [SerializeField] Vector4 testNotes;
+
     Music music;
 
     // Start is called before the first frame update
