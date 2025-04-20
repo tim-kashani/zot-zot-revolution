@@ -1,0 +1,114 @@
+{
+    "name": "Game",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "530e50f7-ea3d-43ad-9dc8-a4f7a984924f",
+            "actions": [
+                {
+                    "name": "Note1",
+                    "type": "Value",
+                    "id": "2f2e6cc7-ad54-47c3-b1f2-a5b937fa2dcb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Note2",
+                    "type": "Value",
+                    "id": "5322bb5a-1b8d-42fd-9142-1ee2860a2945",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Note3",
+                    "type": "Value",
+                    "id": "a4480ef0-b7df-416c-95e8-1eeccc8f0adf",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Note4",
+                    "type": "Value",
+                    "id": "4e5b9c1f-1f4b-4e3c-802f-4cd6424f1d59",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SpaceNote",
+                    "type": "Value",
+                    "id": "bfef39bb-6719-4ad4-a1d0-c389b16b1823",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b9bf0570-2915-4283-97a3-2bb5efa7fd91",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Note1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2a8cc1c6-577f-4b61-bbee-54c5bedf78df",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Note2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "efad2a23-3d8b-4180-bdfb-923383576094",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Note3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "593548b5-e74b-417a-be1f-128af75b87fd",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Note4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a09ed9ef-ece2-4f84-b7b5-bc28c39d8a06",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpaceNote",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
