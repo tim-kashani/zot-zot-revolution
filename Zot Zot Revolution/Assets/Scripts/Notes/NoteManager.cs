@@ -10,11 +10,24 @@ public class NoteManager : MonoBehaviour
     void Start()
     {
         music = FindAnyObjectByType<Music>();
+
+        StartCoroutine(StartMusicDelayed());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    IEnumerator StartMusicDelayed()
+    {
+        // this delays the music start by a second so the scene can load before the song starts
+
+        yield return new WaitForEndOfFrame();
+
+        yield return new WaitForSeconds(1);
+
+        music.StartMusic();
     }
 }
