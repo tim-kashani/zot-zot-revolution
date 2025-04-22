@@ -8,6 +8,19 @@ public class NoteManager : MonoBehaviour
     [Header("Debug")]
     [SerializeField] Vector4[] testNotes;
 
+    [Header("Note Types")]
+    [SerializeField] Note defaultNote;
+
+    [SerializeField] Note spaceNote;
+
+    [SerializeField] Note holdNote;
+
+    [SerializeField] Note spamNote;
+
+    [SerializeField] Note ghostNote;
+
+    [SerializeField] Note cloudNote;
+
     Music music;
 
     // Start is called before the first frame update
