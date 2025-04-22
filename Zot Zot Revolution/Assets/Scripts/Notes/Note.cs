@@ -7,7 +7,7 @@ public class Note : MonoBehaviour
     public int notePosition;
 
     // this is for spacing notes equally from 1-4, can be changed but is static so it stays the same across notes
-    static float xSpacing = 200;
+    static float xSpacing = 200, ySpacing = 200;
 
     // press time is when the note should be pressed, note length is for hold and spam notes
     float pressTime, noteLength;
@@ -28,13 +28,13 @@ public class Note : MonoBehaviour
 
     }
 
-    public virtual void SetXPosition(int i)
+    public virtual void SetXPositionAndTime(int x, float y)
     {
-        notePosition = i;
+        notePosition = x;
 
         RectTransform rectTransform = GetComponent<RectTransform>();
 
-        rectTransform.anchoredPosition = new(CalculateXPosition(i), rectTransform.anchoredPosition.y);
+        rectTransform.anchoredPosition = new(CalculateXPosition(x), y * ySpacing);
     }
 
     protected float CalculateXPosition(int i)
