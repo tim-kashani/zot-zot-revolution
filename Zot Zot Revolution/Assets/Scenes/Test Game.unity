@@ -453,6 +453,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3953121921298516487, guid: 33d6b97b68a2247549cc5b68d13aeeaf,
+        type: 3}
+      propertyPath: noteParent
+      value: 
+      objectReference: {fileID: 5037557216614071171}
     - target: {fileID: 4089795072943100564, guid: 33d6b97b68a2247549cc5b68d13aeeaf,
         type: 3}
       propertyPath: m_Name
@@ -626,11 +631,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gameplay Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8944462174610072038, guid: 1a623f828722843b38afa4d6c7bb713a,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a623f828722843b38afa4d6c7bb713a, type: 3}
+--- !u!224 &5037557216614071171 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8115542860864401076, guid: 1a623f828722843b38afa4d6c7bb713a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5037557216614071170}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5218478205439836837
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -28,15 +28,17 @@ public class Note : MonoBehaviour
 
     }
 
-    public virtual void SetPosition(int i)
+    public virtual void SetXPosition(int i)
     {
         notePosition = i;
 
         RectTransform rectTransform = GetComponent<RectTransform>();
+
+
     }
 
-    protected void CalculateXPosition(int i)
+    protected float CalculateXPosition(int i)
     {
-
+        return 0;
     }
 }

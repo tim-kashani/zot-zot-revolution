@@ -47,7 +47,9 @@ public class NoteManager : MonoBehaviour
     {
         for (int i = 0; i < notes.Count; i++)
         {
-            Note noteToSpawn = (int)notes[i].z switch
+            int noteType = (int)notes[i].z;
+
+            Note noteToSpawn = noteType switch
             {
                 0 => defaultNote,
                 1 => spaceNote,
@@ -59,6 +61,8 @@ public class NoteManager : MonoBehaviour
             };
 
             Note note = Instantiate(noteToSpawn, noteParent);
+
+            note.SetXPosition((int)notes[i].y);
         }
     }
 
