@@ -51,12 +51,12 @@ public class NoteManager : MonoBehaviour
 
             Note noteToSpawn = noteType switch
             {
-                0 => defaultNote,
-                1 => spaceNote,
-                2 => holdNote,
-                3 => spamNote,
-                4 => ghostNote,
-                5 => cloudNote,
+                1 => defaultNote,
+                2 => spaceNote,
+                3 => holdNote,
+                4 => spamNote,
+                5 => ghostNote,
+                6 => cloudNote,
                 _ => defaultNote
             };
 
