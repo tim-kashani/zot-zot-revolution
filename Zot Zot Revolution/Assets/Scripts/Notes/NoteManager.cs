@@ -14,6 +14,8 @@ public class NoteManager : MonoBehaviour
 
     [SerializeField] List<Vector4> testNotes;
 
+    List<Note> track1Notes, track2Notes, track3Notes, track4Notes, track5Notes, allNotes;
+
     [Header("Note Types")]
     [SerializeField] Note defaultNote;
 
@@ -45,12 +47,29 @@ public class NoteManager : MonoBehaviour
 
     public void SpawnNotes(List<Vector4> notes)
     {
+        track1Notes = new();
+
+        track2Notes = new();
+
+        track3Notes = new();
+
+        track4Notes = new();
+
+        track5Notes = new();
+
+        allNotes = new();
+
+        Note[] notesToDestroy = FindObjectsByType<Note>(FindObjectsSortMode.None);
+
+        // destroys old notes in case some were in the scene before
+
+        foreach (Note noteToDestroy in notesToDestroy)
+        {
+            Destroy(noteToDestroy.gameObject);
+        }
+
         // this should sort all notes by time
         notes.Sort((a, b) => a.x.CompareTo(b.x));
-
-        // testing
-
-        testNotes = notes;
 
         for (int i = 0; i < notes.Count; i++)
         {
