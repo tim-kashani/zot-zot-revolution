@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Music : MonoBehaviour
 {
+    [SerializeField] float bpm;
+
     AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -21,5 +23,15 @@ public class Music : MonoBehaviour
     public void StartMusic()
     {
         audioSource.Play();
+    }
+
+    public float GetBPM()
+    {
+        return bpm;
+    }
+
+    public float GetCurrentBeat()
+    {
+        return audioSource.time * bpm / 60;
     }
 }
