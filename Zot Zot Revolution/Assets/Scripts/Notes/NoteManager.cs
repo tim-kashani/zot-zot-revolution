@@ -45,6 +45,13 @@ public class NoteManager : MonoBehaviour
 
     public void SpawnNotes(List<Vector4> notes)
     {
+        // this should sort all notes by time
+        notes.Sort((a, b) => a.x.CompareTo(b.x));
+
+        // testing
+
+        testNotes = notes;
+
         for (int i = 0; i < notes.Count; i++)
         {
             int noteType = (int)notes[i].z;
