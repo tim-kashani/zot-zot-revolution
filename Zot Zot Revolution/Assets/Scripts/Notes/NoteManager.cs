@@ -69,7 +69,7 @@ public class NoteManager : MonoBehaviour
                 noteXPosition = 5;
             }
 
-            note.SetXPosition(noteXPosition);
+            note.SetXPositionAndTime(noteXPosition, notes[i].x);
         }
     }
 
