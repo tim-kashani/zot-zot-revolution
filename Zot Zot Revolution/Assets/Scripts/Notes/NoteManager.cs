@@ -76,7 +76,7 @@ public class NoteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        noteParent.anchoredPosition = new(0, music.GetCurrentBeat() * Note.ySpacing);
     }
 
     public void OnNote1(InputValue v)

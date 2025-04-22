@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    public int notePosition;
-
     // this is for spacing notes equally from 1-4, can be changed but is static so it stays the same across notes
-    static float xSpacing = 200, ySpacing = 200;
+    public static float xSpacing = 200, ySpacing = 200;
+
+    public int notePosition;
 
     // press time is when the note should be pressed, note length is for hold and spam notes
     float pressTime, noteLength;
