@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Music : MonoBehaviour
 {
-    [SerializeField] float bpm;
+    [SerializeField] float bpm = 120;
 
     AudioSource audioSource;
 
