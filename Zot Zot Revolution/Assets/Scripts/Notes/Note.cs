@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
+    public int notePosition;
+
     // this is for spacing notes equally from 1-4, can be changed but is static so it stays the same across notes
     static float xSpacing = 200;
 
@@ -27,6 +29,13 @@ public class Note : MonoBehaviour
     }
 
     public virtual void SetPosition(int i)
+    {
+        notePosition = i;
+
+        RectTransform rectTransform = GetComponent<RectTransform>();
+    }
+
+    protected void CalculateXPosition(int i)
     {
 
     }

@@ -6,7 +6,13 @@ using UnityEngine.InputSystem;
 public class NoteManager : MonoBehaviour
 {
     [Header("Debug")]
-    [SerializeField] Vector4[] testNotes;
+
+    // x is time
+    // y is position
+    // z is note type
+    // w is additional data (hold time, etc.)
+
+    [SerializeField] List<Vector4> testNotes;
 
     [Header("Note Types")]
     [SerializeField] Note defaultNote;
@@ -21,6 +27,9 @@ public class NoteManager : MonoBehaviour
 
     [SerializeField] Note cloudNote;
 
+    [Header("UI")]
+    [SerializeField] RectTransform noteParent;
+
     Music music;
 
     // Start is called before the first frame update
@@ -28,12 +37,29 @@ public class NoteManager : MonoBehaviour
     {
         music = FindAnyObjectByType<Music>();
 
+        // testing
+        SpawnNotes(testNotes);
+
         StartCoroutine(StartMusicDelayed());
     }
 
-    public void SpawnNotes(Vector4[] notes)
+    public void SpawnNotes(List<Vector4> notes)
     {
+        for (int i = 0; i < notes.Count; i++)
+        {
+            Note noteToSpawn = (int)notes[i].z switch
+            {
+                0 => defaultNote,
+                1 => spaceNote,
+                2 => holdNote,
+                3 => spamNote,
+                4 => ghostNote,
+                5 => cloudNote,
+                _ => defaultNote
+            };
 
+            Note note = Instantiate(noteToSpawn, noteParent);
+        }
     }
 
     // Update is called once per frame
