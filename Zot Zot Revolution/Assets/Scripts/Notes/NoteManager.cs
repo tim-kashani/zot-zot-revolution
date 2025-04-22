@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class NoteManager : MonoBehaviour
 {
     [Header("Debug")]
-    [SerializeField] Vector4 testNotes;
+    [SerializeField] Vector4[] testNotes;
 
     Music music;
 
@@ -16,6 +16,11 @@ public class NoteManager : MonoBehaviour
         music = FindAnyObjectByType<Music>();
 
         StartCoroutine(StartMusicDelayed());
+    }
+
+    public void SpawnNotes(Vector4[] notes)
+    {
+
     }
 
     // Update is called once per frame
