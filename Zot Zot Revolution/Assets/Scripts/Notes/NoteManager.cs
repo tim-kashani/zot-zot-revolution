@@ -64,7 +64,7 @@ public class NoteManager : MonoBehaviour
 
             int noteXPosition = (int)notes[i].y;
 
-            if (noteType == 1)
+            if (noteType == 2)
             {
                 noteXPosition = 5;
             }
