@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testNotes:
-  - {x: 1, y: 1, z: 1, w: 1}
-  - {x: 2, y: 2, z: 2, w: 2}
-  - {x: 3, y: 3, z: 3, w: 3}
-  - {x: 4, y: 4, z: 4, w: 4}
+  - {x: 2, y: 1, z: 1, w: 1}
+  - {x: 4, y: 2, z: 2, w: 2}
+  - {x: 6, y: 3, z: 3, w: 3}
+  - {x: 8, y: 4, z: 4, w: 4}
   defaultNote: {fileID: 2454906398162155823, guid: e2973c3a461734f55a3abaf616324241,
     type: 3}
   spaceNote: {fileID: 294787972711023421, guid: 47b8d8197c10d416a990b26fdf05c10c,

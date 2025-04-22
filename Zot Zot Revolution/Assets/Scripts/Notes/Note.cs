@@ -5,7 +5,7 @@ using UnityEngine;
 public class Note : MonoBehaviour
 {
     // this is for spacing notes equally from 1-4, can be changed but is static so it stays the same across notes
-    public static float xSpacing = 200, ySpacing = 200;
+    public static float xSpacing = 200, ySpacing = 150;
 
     public int notePosition;
 
