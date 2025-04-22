@@ -97,6 +97,20 @@ public class NoteManager : MonoBehaviour
             }
 
             note.SetXPositionAndTime(noteXPosition, notes[i].x);
+
+            List<Note> listToAdd = noteXPosition switch
+            {
+                1 => track1Notes,
+                2 => track2Notes,
+                3 => track3Notes,
+                4 => track4Notes,
+                5 => track5Notes,
+                _ => track1Notes
+            };
+
+            listToAdd.Add(note);
+
+            allNotes.Add(note);
         }
     }
 
