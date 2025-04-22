@@ -14,7 +14,8 @@ public class NoteManager : MonoBehaviour
 
     [SerializeField] List<Vector4> testNotes;
 
-    List<Note> track1Notes, track2Notes, track3Notes, track4Notes, track5Notes, allNotes;
+    // this is serialized so it's easier to see that it's working in editor
+    [SerializeField] List<Note> track1Notes, track2Notes, track3Notes, track4Notes, track5Notes, allNotes;
 
     [Header("Note Types")]
     [SerializeField] Note defaultNote;
