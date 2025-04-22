@@ -62,7 +62,14 @@ public class NoteManager : MonoBehaviour
 
             Note note = Instantiate(noteToSpawn, noteParent);
 
-            note.SetXPosition((int)notes[i].y);
+            int noteXPosition = (int)notes[i].y;
+
+            if (noteType == 1)
+            {
+                noteXPosition = 5;
+            }
+
+            note.SetXPosition(noteXPosition);
         }
     }
 

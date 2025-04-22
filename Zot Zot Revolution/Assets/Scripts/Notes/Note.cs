@@ -34,11 +34,18 @@ public class Note : MonoBehaviour
 
         RectTransform rectTransform = GetComponent<RectTransform>();
 
-
+        rectTransform.anchoredPosition = new(CalculateXPosition(i), rectTransform.anchoredPosition.y);
     }
 
     protected float CalculateXPosition(int i)
     {
-        return 0;
+        if (i > 4)
+        {
+            return 0;
+        }
+
+        float x = ((i - 1) * xSpacing) - (xSpacing * 1.5f);
+
+        return x;
     }
 }
