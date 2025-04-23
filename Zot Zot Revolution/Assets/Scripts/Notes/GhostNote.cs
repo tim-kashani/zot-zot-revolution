@@ -12,4 +12,39 @@ public class GhostNote : Note
     // music.GetCurrentBeat() is your friend
 
     [SerializeField] Image noteImage;
+
+    bool hasBeenPressed;
+
+    private void Update()
+    {
+        if (hasBeenPressed)
+        {
+            return;
+        }
+
+        float beatsToJudgement = music.GetCurrentBeat() - pressTime;
+
+        if (beatsToJudgement > 4)
+        {
+            return;
+        }
+
+        float alpha = Mathf.Clamp01((3 - beatsToJudgement) / 3);
+
+        SetImageAlpha(alpha);
+    }
+
+    public override void OnPress()
+    {
+        base.OnPress();
+
+        hasBeenPressed = true;
+
+        SetImageAlpha(1);
+    }
+
+    void SetImageAlpha(float f)
+    {
+        noteImage.color = new(1, 1, 1, f);
+    }
 }

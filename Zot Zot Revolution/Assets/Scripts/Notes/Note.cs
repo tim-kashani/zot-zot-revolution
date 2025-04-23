@@ -12,7 +12,7 @@ public class Note : MonoBehaviour
     [SerializeField] float scoreMultiplier = 1;
 
     // press time is when the note should be pressed, note length is for hold and spam notes
-    float pressTime, noteLength;
+    protected float pressTime, noteLength;
 
     protected NoteManager noteManager;
 
