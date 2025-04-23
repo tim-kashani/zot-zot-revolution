@@ -22,14 +22,14 @@ public class GhostNote : Note
             return;
         }
 
-        float beatsToJudgement = music.GetCurrentBeat() - pressTime;
+        float beatsToJudgement = pressTime - music.GetCurrentBeat();
 
-        if (beatsToJudgement > 4)
+        if (beatsToJudgement > 6)
         {
             return;
         }
 
-        float alpha = Mathf.Clamp01((3 - beatsToJudgement) / 3);
+        float alpha = Mathf.Clamp01((beatsToJudgement - 2) / 3);
 
         SetImageAlpha(alpha);
     }
@@ -45,6 +45,8 @@ public class GhostNote : Note
 
     void SetImageAlpha(float f)
     {
+        Debug.Log("Alpha: " + f);
+
         noteImage.color = new(1, 1, 1, f);
     }
 }
