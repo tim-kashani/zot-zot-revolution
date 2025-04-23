@@ -14,12 +14,20 @@ public class Note : MonoBehaviour
     // press time is when the note should be pressed, note length is for hold and spam notes
     float pressTime, noteLength;
 
+    // this is called when the player presses the note
     public virtual void OnPress()
     {
 
     }
 
+    // this is called when the player releases the note
     public virtual void OnRelease()
+    {
+
+    }
+
+    // this is when a note should not be pressable, either after pressing it or having it pass the judgement zone
+    public void RemoveNote()
     {
 
     }
@@ -31,6 +39,11 @@ public class Note : MonoBehaviour
         RectTransform rectTransform = GetComponent<RectTransform>();
 
         rectTransform.anchoredPosition = new(CalculateXPosition(x), y * ySpacing);
+    }
+
+    public virtual void SetNoteLength(float f)
+    {
+        noteLength = f;
     }
 
     protected float CalculateXPosition(int i)

@@ -98,6 +98,8 @@ public class NoteManager : MonoBehaviour
 
             note.SetXPositionAndTime(noteXPosition, notes[i].x);
 
+            note.SetNoteLength(notes[i].w);
+
             List<Note> listToAdd = noteXPosition switch
             {
                 1 => track1Notes,
