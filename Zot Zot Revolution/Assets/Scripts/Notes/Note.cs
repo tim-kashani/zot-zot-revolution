@@ -24,7 +24,7 @@ public class Note : MonoBehaviour
             noteManager = FindAnyObjectByType<NoteManager>();
         }
 
-        noteManager.AddScore(CalculateScore(pressTime));
+        noteManager.AddScore(CalculateScoreMultiplier(pressTime) * 100);
 
         RemoveNote();
     }
@@ -41,7 +41,7 @@ public class Note : MonoBehaviour
 
     }
 
-    public virtual float CalculateScore(float f)
+    public float CalculateScoreMultiplier(float f)
     {
         if (noteManager == null)
         {
@@ -54,7 +54,7 @@ public class Note : MonoBehaviour
 
         float subtraction = abs - 0.1f;
 
-        float score = 100 * scoreMultiplier * (1 - subtraction);
+        float score = scoreMultiplier * (1 - subtraction);
 
         return score;
     }
