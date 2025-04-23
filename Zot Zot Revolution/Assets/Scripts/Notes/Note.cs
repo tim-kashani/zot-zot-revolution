@@ -44,6 +44,8 @@ public class Note : MonoBehaviour
         }
 
         noteManager.RemoveNote(this, notePosition);
+
+        Destroy(gameObject);
     }
 
     public float CalculateScoreMultiplier(float f)
