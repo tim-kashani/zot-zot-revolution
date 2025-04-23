@@ -38,7 +38,7 @@ public class NoteManager : MonoBehaviour
 
     Music music;
 
-    float score;
+    float score, maxScore;
 
     // Start is called before the first frame update
     void Start()
