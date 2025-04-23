@@ -38,7 +38,12 @@ public class Note : MonoBehaviour
     // this is when a note should not be pressable, either after pressing it or having it pass the judgement zone
     public void RemoveNote()
     {
+        if (noteManager == null)
+        {
+            noteManager = FindAnyObjectByType<NoteManager>();
+        }
 
+        noteManager.RemoveNote(this, notePosition);
     }
 
     public float CalculateScoreMultiplier(float f)
