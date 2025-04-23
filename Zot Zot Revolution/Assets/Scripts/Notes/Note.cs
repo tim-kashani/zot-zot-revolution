@@ -9,14 +9,10 @@ public class Note : MonoBehaviour
 
     public int notePosition;
 
+    [SerializeField] float scoreMultiplier = 1;
+
     // press time is when the note should be pressed, note length is for hold and spam notes
     float pressTime, noteLength;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     public virtual void OnPress()
     {
