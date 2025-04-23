@@ -75,6 +75,11 @@ public class Note : MonoBehaviour
             subtraction = 0;
         }
 
+        if (subtraction > 1)
+        {
+            subtraction = 1;
+        }
+
         float score = scoreMultiplier * (1 - subtraction);
 
         return score;

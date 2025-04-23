@@ -226,7 +226,7 @@ public class NoteManager : MonoBehaviour
     {
         float offset = music.GetCurrentBeat() - beat;
 
-        float seconds = offset * music.GetBPM() / 60;
+        float seconds = offset * 60 / music.GetBPM();
 
         Debug.Log("Offset of " + music.GetCurrentBeat() + " - " + beat + " = " + offset + ",  seconds = " + seconds);
 
