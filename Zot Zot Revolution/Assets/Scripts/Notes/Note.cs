@@ -96,6 +96,11 @@ public class Note : MonoBehaviour
         noteLength = f;
     }
 
+    public float GetPressTime()
+    {
+        return pressTime;
+    }
+
     protected float CalculateXPosition(int i)
     {
         if (i > 4)

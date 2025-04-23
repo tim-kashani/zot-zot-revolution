@@ -176,6 +176,11 @@ public class NoteManager : MonoBehaviour
 
         Note note = trackList[0];
 
+        if (CalculateOffset(note.GetPressTime()) > 1)
+        {
+            return;
+        }
+
         note.OnPress();
     }
 
@@ -221,7 +226,11 @@ public class NoteManager : MonoBehaviour
     {
         float offset = music.GetCurrentBeat() - beat;
 
-        return offset / music.GetBPM();
+        float seconds = offset * music.GetBPM() / 60;
+
+        Debug.Log("Offset of " + music.GetCurrentBeat() + " - " + beat + " = " + offset + ",  seconds = " + seconds);
+
+        return seconds;
     }
 
     List<Note> GetTrackList(int i)
