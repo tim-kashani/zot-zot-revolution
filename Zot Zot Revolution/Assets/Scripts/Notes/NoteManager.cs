@@ -167,7 +167,14 @@ public class NoteManager : MonoBehaviour
     {
         Debug.Log("Pressed note " + i);
 
-        Note note = GetTrackList(i)[0];
+        List<Note> trackList = GetTrackList(i);
+
+        if (trackList.Count < 1)
+        {
+            return;
+        }
+
+        Note note = trackList[0];
 
         note.OnPress();
     }
@@ -176,7 +183,14 @@ public class NoteManager : MonoBehaviour
     {
         Debug.Log("Released note " + i);
 
-        Note note = GetTrackList(i)[0];
+        List<Note> trackList = GetTrackList(i);
+
+        if (trackList.Count < 1)
+        {
+            return;
+        }
+
+        Note note = trackList[0];
 
         note.OnRelease();
     }
