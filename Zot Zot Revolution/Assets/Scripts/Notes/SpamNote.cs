@@ -15,5 +15,7 @@ public class SpamNote : Note
     public override void SetNoteLength(float f)
     {
         base.SetNoteLength(f);
+
+        spamBar.sizeDelta = new(spamBar.sizeDelta.x, f * ySpacing);
     }
 }

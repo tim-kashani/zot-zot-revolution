@@ -17,6 +17,6 @@ public class HoldNote : Note
     {
         base.SetNoteLength(f);
 
-        holdBar.sizeDelta = new(holdBar.sizeDelta.x, f * Note.ySpacing);
+        holdBar.sizeDelta = new(holdBar.sizeDelta.x, f * ySpacing);
     }
 }
