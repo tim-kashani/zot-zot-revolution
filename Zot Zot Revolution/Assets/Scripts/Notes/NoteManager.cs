@@ -158,11 +158,19 @@ public class NoteManager : MonoBehaviour
     public void PressNote(int i)
     {
         Debug.Log("Pressed note " + i);
+
+        Note note = GetTrackList(i)[0];
+
+        note.OnPress();
     }
 
     public void ReleaseNote(int i)
     {
         Debug.Log("Released note " + i);
+
+        Note note = GetTrackList(i)[0];
+
+        note.OnRelease();
     }
 
     public void AddScore(float f)
