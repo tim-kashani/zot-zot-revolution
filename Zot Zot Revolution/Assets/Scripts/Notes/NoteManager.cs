@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class NoteManager : MonoBehaviour
 {
@@ -33,7 +34,11 @@ public class NoteManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] RectTransform noteParent;
 
+    [SerializeField] TMP_Text scoreText;
+
     Music music;
+
+    float score;
 
     // Start is called before the first frame update
     void Start()
@@ -170,7 +175,14 @@ public class NoteManager : MonoBehaviour
 
     public void AddScore(float f)
     {
+        score += f;
 
+        UpdateScoreText();
+    }
+
+    void UpdateScoreText()
+    {
+        scoreText.text = "Score: " + score.ToString("00000");
     }
 
     public float CalculateOffset(float beat)
