@@ -8,6 +8,9 @@ public class CloudtNote : Note
     // Cloud Note Guidelines
 
     // Cloud image should cover the note and fade out to reveal the note soon before the judgement zone
+    // Opacity is half in the prefab just so you can see the note while testing, but it should be fully opaque until close to judgement zone
+
+    // music.GetCurrentBeat() is your friend
 
     [SerializeField] Image cloudImage;
 

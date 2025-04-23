@@ -10,6 +10,8 @@ public class HoldNote : Note
     // Has to be tracked as being held and give you points for holding
     // If let go, stop giving points and can't re-press the note
 
+    // music.GetCurrentBeat() and noteLength is your friend
+
     // indicator for how long the player should hold
     [SerializeField] RectTransform holdBar;
 

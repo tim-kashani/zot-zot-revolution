@@ -9,5 +9,7 @@ public class GhostNote : Note
 
     // Like a default note, except it should slowly fade out to where it's invisible before the judgement zone
 
+    // music.GetCurrentBeat() is your friend
+
     [SerializeField] Image noteImage;
 }

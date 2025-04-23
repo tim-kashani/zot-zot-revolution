@@ -14,7 +14,16 @@ public class Note : MonoBehaviour
     // press time is when the note should be pressed, note length is for hold and spam notes
     float pressTime, noteLength;
 
-    NoteManager noteManager;
+    protected NoteManager noteManager;
+
+    protected Music music;
+
+    private void Start()
+    {
+        noteManager = FindAnyObjectByType<NoteManager>();
+
+        music = FindAnyObjectByType<Music>();
+    }
 
     // this is called when the player presses the note
     public virtual void OnPress()
