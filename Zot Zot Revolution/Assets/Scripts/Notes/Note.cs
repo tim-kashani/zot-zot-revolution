@@ -14,10 +14,19 @@ public class Note : MonoBehaviour
     // press time is when the note should be pressed, note length is for hold and spam notes
     float pressTime, noteLength;
 
+    NoteManager noteManager;
+
     // this is called when the player presses the note
     public virtual void OnPress()
     {
+        if (noteManager == null)
+        {
+            noteManager = FindAnyObjectByType<NoteManager>();
+        }
 
+        noteManager.AddScore(CalculateScore(pressTime));
+
+        RemoveNote();
     }
 
     // this is called when the player releases the note
@@ -32,6 +41,24 @@ public class Note : MonoBehaviour
 
     }
 
+    public virtual float CalculateScore(float f)
+    {
+        if (noteManager == null)
+        {
+            noteManager = FindAnyObjectByType<NoteManager>();
+        }
+
+        float offset = noteManager.CalculateOffset(f);
+
+        float abs = Mathf.Abs(offset);
+
+        float subtraction = abs - 0.1f;
+
+        float score = 100 * scoreMultiplier * (1 - subtraction);
+
+        return score;
+    }
+
     public virtual void SetXPositionAndTime(int x, float y)
     {
         notePosition = x;
@@ -39,6 +66,8 @@ public class Note : MonoBehaviour
         RectTransform rectTransform = GetComponent<RectTransform>();
 
         rectTransform.anchoredPosition = new(CalculateXPosition(x), y * ySpacing);
+
+        pressTime = y;
     }
 
     public virtual void SetNoteLength(float f)

@@ -168,6 +168,18 @@ public class NoteManager : MonoBehaviour
         Debug.Log("Released note " + i);
     }
 
+    public void AddScore(float f)
+    {
+
+    }
+
+    public float CalculateOffset(float beat)
+    {
+        float offset = music.GetCurrentBeat() - beat;
+
+        return offset / music.GetBPM();
+    }
+
     IEnumerator StartMusicDelayed()
     {
         // this delays the music start by a second so the scene can load before the song starts
