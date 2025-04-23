@@ -105,15 +105,7 @@ public class NoteManager : MonoBehaviour
 
             note.SetNoteLength(notes[i].w);
 
-            List<Note> listToAdd = noteXPosition switch
-            {
-                1 => track1Notes,
-                2 => track2Notes,
-                3 => track3Notes,
-                4 => track4Notes,
-                5 => track5Notes,
-                _ => track1Notes
-            };
+            List<Note> listToAdd = GetTrackList(noteXPosition);
 
             listToAdd.Add(note);
 
@@ -180,6 +172,16 @@ public class NoteManager : MonoBehaviour
         UpdateScoreText();
     }
 
+    public void RemoveNote(Note note, int position)
+    {
+        List<Note> listToRemove = GetTrackList(position);
+
+        if (listToRemove.Contains(note))
+        {
+            listToRemove.Remove(note);
+        }
+    }
+
     void UpdateScoreText()
     {
         scoreText.text = "Score: " + score.ToString("00000");
@@ -190,6 +192,21 @@ public class NoteManager : MonoBehaviour
         float offset = music.GetCurrentBeat() - beat;
 
         return offset / music.GetBPM();
+    }
+
+    List<Note> GetTrackList(int i)
+    {
+        List<Note> list = i switch
+        {
+            1 => track1Notes,
+            2 => track2Notes,
+            3 => track3Notes,
+            4 => track4Notes,
+            5 => track5Notes,
+            _ => track1Notes
+        };
+
+        return list;
     }
 
     IEnumerator StartMusicDelayed()
