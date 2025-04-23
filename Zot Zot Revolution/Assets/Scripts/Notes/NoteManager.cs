@@ -10,7 +10,7 @@ public class NoteManager : MonoBehaviour
     // x is time
     // y is position
     // z is note type
-    // w is additional data (hold time, etc.)
+    // w is note length for hold and spam notes
 
     [SerializeField] List<Vector4> testNotes;
 
