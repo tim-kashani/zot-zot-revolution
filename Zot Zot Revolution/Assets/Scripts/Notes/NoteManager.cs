@@ -46,13 +46,15 @@ public class NoteManager : MonoBehaviour
         music = FindAnyObjectByType<Music>();
 
         // testing
-        SpawnNotes(testNotes);
+        StartCoroutine(SpawnNotes(testNotes));
 
-        StartCoroutine(StartMusicDelayed());
+        //StartCoroutine(StartMusicDelayed());
     }
 
-    public void SpawnNotes(List<Vector4> notes)
+    public IEnumerator SpawnNotes(List<Vector4> notes)
     {
+        yield return new WaitForEndOfFrame();
+
         track1Notes = new();
 
         track2Notes = new();
@@ -110,7 +112,13 @@ public class NoteManager : MonoBehaviour
             listToAdd.Add(note);
 
             allNotes.Add(note);
+
+            yield return new WaitForEndOfFrame();
         }
+
+        yield return new WaitForSeconds(1);
+
+        music.StartMusic();
     }
 
     // Update is called once per frame
