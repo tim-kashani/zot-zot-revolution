@@ -57,7 +57,7 @@ public class NoteManager : MonoBehaviour
 
     public IEnumerator SpawnNotes(List<Vector4> notes)
     {
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         track1Notes = new();
 
@@ -121,6 +121,8 @@ public class NoteManager : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }*/
+
+        yield return new WaitForEndOfFrame();
 
         yield return new WaitForSeconds(1);
 
