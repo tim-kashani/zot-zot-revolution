@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notePosition: 5
   scoreMultiplier: 1
+  fadeScaleMultiplier: 0.25
   noteImage: {fileID: 9155854092633544272}
 --- !u!1 &6134042123614260608
 GameObject:
