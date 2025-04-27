@@ -40,6 +40,10 @@ public class NoteManager : MonoBehaviour
 
     float score, maxScore;
 
+    List<Vector4> noteList;
+
+    int currentNoteIndex;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,7 +83,9 @@ public class NoteManager : MonoBehaviour
         // this should sort all notes by time
         notes.Sort((a, b) => a.x.CompareTo(b.x));
 
-        for (int i = 0; i < notes.Count; i++)
+        noteList = notes;
+
+        /*for (int i = 0; i < notes.Count; i++)
         {
             int noteType = (int)notes[i].z;
 
@@ -114,7 +120,7 @@ public class NoteManager : MonoBehaviour
             allNotes.Add(note);
 
             yield return new WaitForEndOfFrame();
-        }
+        }*/
 
         yield return new WaitForSeconds(1);
 
@@ -125,6 +131,53 @@ public class NoteManager : MonoBehaviour
     void Update()
     {
         noteParent.anchoredPosition = new(0, music.GetCurrentBeat() * Note.ySpacing * -1);
+
+        if (currentNoteIndex >= noteList.Count)
+        {
+            return;
+        }
+
+        if (noteList[currentNoteIndex].x <= (music.GetCurrentBeat() + 10))
+        {
+            SpawnNote(currentNoteIndex);
+
+            currentNoteIndex++;
+        }
+    }
+
+    void SpawnNote(int i)
+    {
+        int noteType = (int)noteList[i].z;
+
+        Note noteToSpawn = noteType switch
+        {
+            1 => defaultNote,
+            2 => spaceNote,
+            3 => holdNote,
+            4 => spamNote,
+            5 => ghostNote,
+            6 => cloudNote,
+            _ => defaultNote
+        };
+
+        Note note = Instantiate(noteToSpawn, noteParent);
+
+        int noteXPosition = (int)noteList[i].y;
+
+        if (noteType == 2)
+        {
+            noteXPosition = 5;
+        }
+
+        note.SetXPositionAndTime(noteXPosition, noteList[i].x);
+
+        note.SetNoteLength(noteList[i].w);
+
+        List<Note> listToAdd = GetTrackList(noteXPosition);
+
+        listToAdd.Add(note);
+
+        allNotes.Add(note);
     }
 
     public void OnNote1(InputValue v)
