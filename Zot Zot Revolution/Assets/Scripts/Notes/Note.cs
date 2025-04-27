@@ -57,7 +57,7 @@ public class Note : MonoBehaviour
 
         noteManager.RemoveNote(this, notePosition);
 
-        Destroy(gameObject);
+        StartCoroutine(FadeOutNote());
     }
 
     public float CalculateScoreMultiplier(float f)
@@ -123,7 +123,29 @@ public class Note : MonoBehaviour
 
     IEnumerator FadeOutNote()
     {
+        noteImage.color = Color.white;
 
+        float f = 1;
+
+        Vector3 position = noteImage.rectTransform.position;
+
+        while (f > 0)
+        {
+            f -= Time.deltaTime;
+
+            if (f < 0)
+            {
+                f = 0;
+            }
+
+            noteImage.color = new(1, 1, 1, f);
+
+            noteImage.rectTransform.position = position;
+
+            noteImage.transform.localScale = (2 - f) * Vector3.one;
+
+            yield return new WaitForEndOfFrame();
+        }
 
         Destroy(gameObject);
     }
