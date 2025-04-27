@@ -15,10 +15,77 @@ public class HoldNote : Note
     // indicator for how long the player should hold
     [SerializeField] RectTransform holdBar;
 
+    bool isBeingPressed;
+
+    float maxHoldPoints, currentHoldPoints, lastFrame;
+
+    private void Update()
+    {
+        float delta = music.GetCurrentBeat() - lastFrame;
+
+        lastFrame = music.GetCurrentBeat();
+
+        if (!isBeingPressed)
+        {
+            return;
+        }
+
+        if (pressTime <= music.GetCurrentBeat())
+        {
+            float pointsDelta = delta * 25;
+
+            if ((currentHoldPoints + pointsDelta) > maxHoldPoints)
+            {
+                pointsDelta = maxHoldPoints - currentHoldPoints;
+            }
+
+            if (pointsDelta < 0)
+            {
+                pointsDelta = 0;
+            }
+
+            currentHoldPoints += pointsDelta;
+
+            noteManager.AddScore(pointsDelta);
+
+            if (pressTime + noteLength <= music.GetCurrentBeat())
+            {
+                isBeingPressed = false;
+
+                if (currentHoldPoints < maxHoldPoints)
+                {
+                    noteManager.AddScore(maxHoldPoints - currentHoldPoints);
+                }
+
+                RemoveNote();
+
+                return;
+            }
+        }
+    }
+
     public override void SetNoteLength(float f)
     {
         base.SetNoteLength(f);
 
         holdBar.sizeDelta = new(holdBar.sizeDelta.x, f * ySpacing);
+
+        maxHoldPoints = noteLength * 50;
+    }
+
+    public override void OnPress()
+    {
+        noteManager.AddScore(CalculateScoreMultiplier(pressTime) * 100);
+
+        isBeingPressed = true;
+    }
+
+    public override void OnRelease()
+    {
+        base.OnRelease();
+
+        isBeingPressed = false;
+
+        RemoveNote();
     }
 }
