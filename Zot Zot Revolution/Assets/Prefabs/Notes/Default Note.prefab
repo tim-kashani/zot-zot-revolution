@@ -51,6 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notePosition: 0
+  scoreMultiplier: 1
+  noteImage: {fileID: 5015970249461423536}
 --- !u!1 &2995175298149316441
 GameObject:
   m_ObjectHideFlags: 0

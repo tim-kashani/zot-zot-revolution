@@ -129,6 +129,8 @@ public class Note : MonoBehaviour
 
         Vector3 position = noteImage.rectTransform.position;
 
+        noteImage.transform.parent = FindAnyObjectByType<Canvas>().transform;
+
         while (f > 0)
         {
             f -= Time.deltaTime;
