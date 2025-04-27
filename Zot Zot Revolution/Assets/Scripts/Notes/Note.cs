@@ -10,7 +10,7 @@ public class Note : MonoBehaviour
 
     public int notePosition;
 
-    [SerializeField] protected float scoreMultiplier = 1;
+    [SerializeField] protected float scoreMultiplier = 1, fadeScaleMultiplier = 1;
 
     [SerializeField] protected Image noteImage;
 
@@ -144,7 +144,7 @@ public class Note : MonoBehaviour
 
             noteImage.rectTransform.position = position;
 
-            noteImage.transform.localScale = (2 - f) * Vector3.one;
+            noteImage.transform.localScale = (1 + ((1 - f) * fadeScaleMultiplier)) * Vector3.one;
 
             yield return new WaitForEndOfFrame();
         }
