@@ -231,7 +231,7 @@ public class NoteManager : MonoBehaviour
 
         Note note = trackList[0];
 
-        if (CalculateOffset(note.GetPressTime()) < -0.5f)
+        if (CalculateOffset(note.GetPressTime()) < -0.75f)
         {
             return;
         }

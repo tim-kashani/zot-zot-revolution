@@ -83,7 +83,9 @@ public class Note : MonoBehaviour
             subtraction = 1;
         }
 
-        float score = scoreMultiplier * (1 - subtraction);
+        float multiplier = 1 - subtraction;
+
+        float score = scoreMultiplier * multiplier * multiplier;
 
         return score;
     }
