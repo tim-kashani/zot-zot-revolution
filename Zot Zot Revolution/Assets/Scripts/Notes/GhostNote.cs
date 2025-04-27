@@ -11,7 +11,7 @@ public class GhostNote : Note
 
     // music.GetCurrentBeat() is your friend
 
-    [SerializeField] Image noteImage;
+    //[SerializeField] Image noteImage;
 
     bool hasBeenPressed;
 

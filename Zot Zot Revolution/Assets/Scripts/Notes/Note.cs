@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Note : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class Note : MonoBehaviour
 
     public int notePosition;
 
-    [SerializeField] float scoreMultiplier = 1;
+    [SerializeField] protected float scoreMultiplier = 1;
+
+    [SerializeField] protected Image noteImage;
 
     // press time is when the note should be pressed, note length is for hold and spam notes
     protected float pressTime, noteLength;
@@ -116,5 +119,12 @@ public class Note : MonoBehaviour
         float x = ((i - 1) * xSpacing) - (xSpacing * 1.5f);
 
         return x;
+    }
+
+    IEnumerator FadeOutNote()
+    {
+
+
+        Destroy(gameObject);
     }
 }
