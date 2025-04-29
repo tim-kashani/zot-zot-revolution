@@ -21,6 +21,8 @@ public class Note : MonoBehaviour
 
     protected Music music;
 
+    protected bool fadedOut;
+
     private void Start()
     {
         noteManager = FindAnyObjectByType<NoteManager>();
@@ -57,7 +59,13 @@ public class Note : MonoBehaviour
 
         noteManager.RemoveNote(this, notePosition);
 
-        StartCoroutine(FadeOutNote(true));
+        if (!fadedOut)
+        {
+            StartCoroutine(FadeOutNote(true));
+        } else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public float CalculateScoreMultiplier(float f)
@@ -125,6 +133,8 @@ public class Note : MonoBehaviour
 
     protected IEnumerator FadeOutNote(bool destroy)
     {
+        fadedOut = true;
+
         noteImage.color = Color.white;
 
         float f = 1;
