@@ -50,9 +50,14 @@ public class NoteManager : MonoBehaviour
         music = FindAnyObjectByType<Music>();
 
         // testing
-        StartCoroutine(SpawnNotes(testNotes));
+        //StartCoroutine(SpawnNotes(testNotes));
 
         //StartCoroutine(StartMusicDelayed());
+    }
+
+    public void Spawn(List<Vector4> notes)
+    {
+        StartCoroutine(SpawnNotes(notes));
     }
 
     public IEnumerator SpawnNotes(List<Vector4> notes)

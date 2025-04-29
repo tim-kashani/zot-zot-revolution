@@ -9,7 +9,7 @@ public class NoteDataCreator : MonoBehaviour
 {
     [SerializeField] string fileName;
 
-    [SerializeField] Vector4[] vectors;
+    [SerializeField] List<Vector4> vectors;
 
     string path;
 
@@ -37,10 +37,24 @@ public class NoteDataCreator : MonoBehaviour
 
         Debug.Log(notes.Count);
 
+        List<Vector4> newVectors = new();
+
         foreach (Melanchall.DryWetMidi.Interaction.Note note in notes)
         {
             Debug.Log("Note at " + note.Time + " time and " + note.NoteNumber + " number and " + note.Length + " length");
+
+            int noteNumber = note.NoteNumber - 35;
+
+            int noteType = (noteNumber / 12) + 1;
+
+            Debug.Log("Note at " + note.Time / 480 + " time and " + noteNumber + " number and " + note.Length / 480 + " length");
+
+            Vector4 v = new(note.Time / 480, noteNumber - ((noteType - 1) * 12), noteNumber, note.Length / 480);
+
+            newVectors.Add(v);
         }
+
+        vectors = newVectors;
     }
 
     MidiFile ReadFile(string s)
@@ -55,5 +69,11 @@ public class NoteDataCreator : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         ConvertMidiToVectors();
+
+        yield return new WaitForSeconds(1);
+
+        NoteManager noteManager = FindAnyObjectByType<NoteManager>();
+
+        noteManager.Spawn(vectors));
     }
 }
