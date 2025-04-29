@@ -41,15 +41,13 @@ public class NoteDataCreator : MonoBehaviour
 
         foreach (Melanchall.DryWetMidi.Interaction.Note note in notes)
         {
-            Debug.Log("Note at " + note.Time + " time and " + note.NoteNumber + " number and " + note.Length + " length");
-
             int noteNumber = note.NoteNumber - 35;
 
             int noteType = (noteNumber / 12) + 1;
 
-            Debug.Log("Note at " + note.Time / 480 + " time and " + noteNumber + " number and " + note.Length / 480 + " length");
+            Debug.Log("Note at " + note.Time / 480 + " time and " + noteNumber + " number and " + noteType + " note type and " + note.Length / 480 + " length");
 
-            Vector4 v = new(note.Time / 480, noteNumber - ((noteType - 1) * 12), noteNumber, note.Length / 480);
+            Vector4 v = new(note.Time / 480, noteNumber - ((noteType - 1) * 12), noteType, note.Length / 480);
 
             newVectors.Add(v);
         }
