@@ -72,6 +72,7 @@ MonoBehaviour:
     type: 3}
   noteParent: {fileID: 0}
   scoreText: {fileID: 0}
+  hitSFX: {fileID: 8300000, guid: 40f1bc118fd0e42be80ab95e1ec5a333, type: 3}
 --- !u!114 &3067889994005355026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
