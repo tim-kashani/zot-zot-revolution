@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notePosition: 0
   scoreMultiplier: 1
-  fadeScaleMultiplier: 1
+  fadeScaleMultiplier: 0.5
   noteImage: {fileID: 5015970249461423536}
   cloudImage: {fileID: 7635263972856718967}
   noteOffset: {fileID: 8082312489864730198}

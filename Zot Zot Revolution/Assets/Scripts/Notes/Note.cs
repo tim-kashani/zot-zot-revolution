@@ -57,7 +57,7 @@ public class Note : MonoBehaviour
 
         noteManager.RemoveNote(this, notePosition);
 
-        StartCoroutine(FadeOutNote());
+        StartCoroutine(FadeOutNote(true));
     }
 
     public float CalculateScoreMultiplier(float f)
@@ -123,7 +123,7 @@ public class Note : MonoBehaviour
         return x;
     }
 
-    IEnumerator FadeOutNote()
+    protected IEnumerator FadeOutNote(bool destroy)
     {
         noteImage.color = Color.white;
 
@@ -133,7 +133,7 @@ public class Note : MonoBehaviour
 
         noteImage.transform.parent = FindAnyObjectByType<Canvas>().transform;
 
-        float scale = noteImage.transform.localScale.x * 1.1f;
+        float scale = noteImage.transform.localScale.x * 1.25f;
 
         while (f > 0)
         {
@@ -153,6 +153,9 @@ public class Note : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        Destroy(gameObject);
+        if (destroy)
+        {
+            Destroy(gameObject);
+        }
     }
 }

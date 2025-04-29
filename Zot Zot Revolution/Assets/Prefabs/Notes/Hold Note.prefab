@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notePosition: 0
   scoreMultiplier: 1
-  fadeScaleMultiplier: 1
+  fadeScaleMultiplier: 0.5
   noteImage: {fileID: 5015970249461423536}
   holdBar: {fileID: 645915880482534512}
 --- !u!1 &2995175298149316441

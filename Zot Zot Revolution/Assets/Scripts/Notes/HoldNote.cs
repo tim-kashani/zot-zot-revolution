@@ -79,7 +79,7 @@ public class HoldNote : Note
 
         isBeingPressed = true;
 
-        noteImage.rectTransform.localScale = 1.1f * Vector3.one;
+        StartCoroutine(FadeOutNote(true));
     }
 
     public override void OnRelease()
