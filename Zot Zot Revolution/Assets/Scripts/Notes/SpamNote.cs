@@ -14,7 +14,7 @@ public class SpamNote : Note
 
     bool isBeingPressed;
 
-    float maxHoldPoints, currentHoldPoints, lastFrame;
+    float maxHoldPoints, currentHoldPoints, lastFrame, spamTimer;
 
     private void Update()
     {
@@ -24,6 +24,20 @@ public class SpamNote : Note
 
         if (!isBeingPressed)
         {
+            return;
+        }
+
+        if (isRemoved)
+        {
+            return;
+        }
+
+        spamTimer -= Time.deltaTime;
+
+        if (spamTimer <= 0)
+        {
+            RemoveNote();
+
             return;
         }
 
@@ -72,24 +86,18 @@ public class SpamNote : Note
 
     public override void OnPress()
     {
-        noteManager.AddScore(CalculateScoreMultiplier(pressTime) * 100);
+        spamTimer = 0.33f;
 
-        isBeingPressed = true;
-
-        StartCoroutine(FadeOutNote());
-    }
-
-    public override void OnRelease()
-    {
         if (!isBeingPressed)
         {
-            return;
+            noteManager.AddScore(CalculateScoreMultiplier(pressTime) * 100);
+
+            isBeingPressed = true;
+
+            StartCoroutine(FadeOutNote());
+        } else
+        {
+            noteManager.HitNote();
         }
-
-        base.OnRelease();
-
-        isBeingPressed = false;
-
-        RemoveNote();
     }
 }
