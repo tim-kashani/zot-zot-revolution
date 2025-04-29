@@ -82,6 +82,11 @@ public class HoldNote : Note
 
     public override void OnRelease()
     {
+        if (!isBeingPressed)
+        {
+            return;
+        }
+
         base.OnRelease();
 
         isBeingPressed = false;
