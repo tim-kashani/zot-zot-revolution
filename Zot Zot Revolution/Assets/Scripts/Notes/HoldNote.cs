@@ -79,7 +79,7 @@ public class HoldNote : Note
 
         isBeingPressed = true;
 
-        StartCoroutine(FadeOutNote(true));
+        StartCoroutine(FadeOutNote());
     }
 
     public override void OnRelease()

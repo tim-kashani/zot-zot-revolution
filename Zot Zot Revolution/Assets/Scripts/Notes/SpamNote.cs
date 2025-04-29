@@ -76,7 +76,7 @@ public class SpamNote : Note
 
         isBeingPressed = true;
 
-        StartCoroutine(FadeOutNote(true));
+        StartCoroutine(FadeOutNote());
     }
 
     public override void OnRelease()
