@@ -61,11 +61,10 @@ public class Note : MonoBehaviour
 
         if (!fadedOut)
         {
-            StartCoroutine(FadeOutNote(true));
-        } else
-        {
-            Destroy(gameObject);
+            StartCoroutine(FadeOutNote());
         }
+
+        StartCoroutine(WaitToDestroy());
     }
 
     public float CalculateScoreMultiplier(float f)
@@ -131,7 +130,7 @@ public class Note : MonoBehaviour
         return x;
     }
 
-    protected IEnumerator FadeOutNote(bool destroy)
+    protected IEnumerator FadeOutNote()
     {
         fadedOut = true;
 
@@ -162,10 +161,12 @@ public class Note : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
+    }
 
-        if (destroy)
-        {
-            Destroy(gameObject);
-        }
+    protected IEnumerator WaitToDestroy()
+    {
+        yield return new WaitForSeconds(1);
+
+        Destroy(gameObject);
     }
 }
