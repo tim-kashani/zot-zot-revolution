@@ -21,7 +21,7 @@ public class Note : MonoBehaviour
 
     protected Music music;
 
-    protected bool fadedOut;
+    protected bool fadedOut, isRemoved;
 
     private void Start()
     {
@@ -32,7 +32,7 @@ public class Note : MonoBehaviour
 
     private void Update()
     {
-        if (noteManager.CalculateOffset(pressTime) > 0.5f)
+        if (noteManager.CalculateOffset(pressTime) > 0.5f && !isRemoved)
         {
             Debug.Log("Too Late");
 
@@ -62,7 +62,7 @@ public class Note : MonoBehaviour
     }
 
     // this is when a note should not be pressable, either after pressing it or having it pass the judgement zone
-    public void RemoveNote()
+    public virtual void RemoveNote()
     {
         if (noteManager == null)
         {
@@ -77,6 +77,8 @@ public class Note : MonoBehaviour
         }
 
         StartCoroutine(WaitToDestroy());
+
+        isRemoved = true;
     }
 
     public float CalculateScoreMultiplier(float f)
