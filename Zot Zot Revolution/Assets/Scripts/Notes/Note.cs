@@ -133,9 +133,11 @@ public class Note : MonoBehaviour
 
         noteImage.transform.parent = FindAnyObjectByType<Canvas>().transform;
 
+        float scale = noteImage.transform.localScale.magnitude;
+
         while (f > 0)
         {
-            f -= Time.deltaTime;
+            f -= Time.deltaTime * 2;
 
             if (f < 0)
             {
@@ -146,7 +148,7 @@ public class Note : MonoBehaviour
 
             noteImage.rectTransform.position = position;
 
-            noteImage.transform.localScale = (1 + ((1 - f) * fadeScaleMultiplier)) * Vector3.one;
+            noteImage.transform.localScale = (1 + ((1 - f) * fadeScaleMultiplier)) * scale * Vector3.one;
 
             yield return new WaitForEndOfFrame();
         }
