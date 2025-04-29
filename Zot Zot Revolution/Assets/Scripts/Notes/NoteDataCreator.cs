@@ -74,6 +74,6 @@ public class NoteDataCreator : MonoBehaviour
 
         NoteManager noteManager = FindAnyObjectByType<NoteManager>();
 
-        noteManager.Spawn(vectors));
+        noteManager.Spawn(vectors);
     }
 }
