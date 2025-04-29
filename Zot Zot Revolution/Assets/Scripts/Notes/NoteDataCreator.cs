@@ -35,6 +35,8 @@ public class NoteDataCreator : MonoBehaviour
     {
         ICollection<Melanchall.DryWetMidi.Interaction.Note> notes = midiFile.GetNotes();
 
+        Debug.Log(notes.Count);
+
         foreach (Melanchall.DryWetMidi.Interaction.Note note in notes)
         {
             Debug.Log("Note at " + note.Time + " time and " + note.NoteNumber + " number and " + note.Length + " length");
