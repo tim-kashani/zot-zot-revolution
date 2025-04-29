@@ -36,6 +36,9 @@ public class NoteManager : MonoBehaviour
 
     [SerializeField] TMP_Text scoreText;
 
+    [Header("Sound Effects")]
+    [SerializeField] AudioClip hitSFX;
+
     Music music;
 
     float score, maxScore;
@@ -46,6 +49,8 @@ public class NoteManager : MonoBehaviour
 
     bool spawned;
 
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +60,8 @@ public class NoteManager : MonoBehaviour
         //StartCoroutine(SpawnNotes(testNotes));
 
         //StartCoroutine(StartMusicDelayed());
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Spawn(List<Vector4> notes)
@@ -284,6 +291,11 @@ public class NoteManager : MonoBehaviour
         {
             listToRemove.Remove(note);
         }
+    }
+
+    public void HitNote()
+    {
+        audioSource.PlayOneShot(hitSFX);
     }
 
     void UpdateScoreText()

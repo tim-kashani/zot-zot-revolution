@@ -158,6 +158,8 @@ public class Note : MonoBehaviour
 
         float scale = noteImage.transform.localScale.x * 1.25f;
 
+        noteManager.HitNote();
+
         while (f > 0)
         {
             f -= Time.deltaTime * 2;
