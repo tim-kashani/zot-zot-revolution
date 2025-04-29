@@ -30,6 +30,18 @@ public class Note : MonoBehaviour
         music = FindAnyObjectByType<Music>();
     }
 
+    private void Update()
+    {
+        if (noteManager.CalculateOffset(pressTime) < -0.5f)
+        {
+            Debug.Log("Too Late");
+
+            fadedOut = true;
+
+            RemoveNote();
+        }
+    }
+
     // this is called when the player presses the note
     public virtual void OnPress()
     {
