@@ -47,6 +47,16 @@ public class NoteDataCreator : MonoBehaviour
 
             int noteTrack = noteNumber - ((noteType - 1) * 12);
 
+            if (noteType > 1)
+            {
+                noteType++;
+            }
+
+            if (noteTrack == 5)
+            {
+                noteType = 2;
+            }
+
             Debug.Log("Note at " + note.Time / 480 + " time and " + noteTrack + " number and " + noteType + " note type and " + note.Length / 480 + " length");
 
             Vector4 v = new(note.Time / 480, noteTrack, noteType, note.Length / 480);
