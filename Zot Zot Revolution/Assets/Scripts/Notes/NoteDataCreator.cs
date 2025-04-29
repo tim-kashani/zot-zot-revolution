@@ -57,9 +57,13 @@ public class NoteDataCreator : MonoBehaviour
                 noteType = 2;
             }
 
-            Debug.Log("Note at " + note.Time / 480 + " time and " + noteTrack + " number and " + noteType + " note type and " + note.Length / 480 + " length");
+            float noteTime = note.Time / 480f;
 
-            Vector4 v = new(note.Time / 480, noteTrack, noteType, note.Length / 480);
+            float noteLength = note.Length / 480f;
+
+            Debug.Log("Note at " + noteTime + " time and " + noteTrack + " number and " + noteType + " note type and " + noteLength / 480 + " length");
+
+            Vector4 v = new(noteTime, noteTrack, noteType, noteLength);
 
             newVectors.Add(v);
         }
