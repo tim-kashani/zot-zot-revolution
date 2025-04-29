@@ -278,7 +278,6 @@ GameObject:
   - component: {fileID: 645915880482534512}
   - component: {fileID: 91903178692280326}
   - component: {fileID: 139163744625319561}
-  - component: {fileID: 7505922464074888142}
   m_Layer: 5
   m_Name: Spam Bar
   m_TagString: Untagged
@@ -343,20 +342,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7505922464074888142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9185548482409725901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd928916708a944ca9f36a6f5bae5ab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notePosition: 0
-  scoreMultiplier: 1
-  fadeScaleMultiplier: 1
-  noteImage: {fileID: 0}
-  holdBar: {fileID: 645915880482534512}
