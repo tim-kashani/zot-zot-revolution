@@ -80,6 +80,8 @@ public class HoldNote : Note
         holdBar.sizeDelta = new(holdBar.sizeDelta.x, f * ySpacing);
 
         maxHoldPoints = noteLength * 50;
+
+        noteManager.AddMaxScore(maxHoldPoints);
     }
 
     public override void OnPress()

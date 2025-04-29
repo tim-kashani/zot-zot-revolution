@@ -84,7 +84,7 @@ public class NoteDataCreator : MonoBehaviour
 
         ConvertMidiToVectors();
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
 
         NoteManager noteManager = FindAnyObjectByType<NoteManager>();
 

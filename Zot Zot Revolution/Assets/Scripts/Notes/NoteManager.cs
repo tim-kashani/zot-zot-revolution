@@ -36,6 +36,8 @@ public class NoteManager : MonoBehaviour
 
     [SerializeField] TMP_Text scoreText;
 
+    [SerializeField] TMP_Text maxScoreText;
+
     [Header("Sound Effects")]
     [SerializeField] AudioClip hitSFX;
 
@@ -138,7 +140,7 @@ public class NoteManager : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
 
         spawned = true;
 
@@ -283,6 +285,13 @@ public class NoteManager : MonoBehaviour
         UpdateScoreText();
     }
 
+    public void AddMaxScore(float f)
+    {
+        maxScore += f;
+
+        UpdateMaxScoreText();
+    }
+
     public void RemoveNote(Note note, int position)
     {
         List<Note> listToRemove = GetTrackList(position);
@@ -301,6 +310,11 @@ public class NoteManager : MonoBehaviour
     void UpdateScoreText()
     {
         scoreText.text = "Score: " + score.ToString("00000");
+    }
+
+    void UpdateMaxScoreText()
+    {
+        maxScoreText.text = "Max Score (Testing): " + maxScore.ToString("00000");
     }
 
     public float CalculateOffset(float beat)

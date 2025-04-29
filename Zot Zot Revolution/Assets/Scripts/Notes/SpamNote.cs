@@ -82,6 +82,8 @@ public class SpamNote : Note
         spamBar.sizeDelta = new(spamBar.sizeDelta.x, f * ySpacing);
 
         maxHoldPoints = noteLength * 50;
+
+        noteManager.AddMaxScore(maxHoldPoints);
     }
 
     public override void OnPress()

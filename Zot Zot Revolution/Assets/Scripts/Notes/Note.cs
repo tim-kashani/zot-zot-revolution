@@ -28,6 +28,8 @@ public class Note : MonoBehaviour
         noteManager = FindAnyObjectByType<NoteManager>();
 
         music = FindAnyObjectByType<Music>();
+
+        noteManager.AddMaxScore(100);
     }
 
     private void Update()
