@@ -32,7 +32,7 @@ public class Note : MonoBehaviour
 
     private void Update()
     {
-        if (noteManager.CalculateOffset(pressTime) < -0.5f)
+        if (noteManager.CalculateOffset(pressTime) > 0.5f)
         {
             Debug.Log("Too Late");
 
