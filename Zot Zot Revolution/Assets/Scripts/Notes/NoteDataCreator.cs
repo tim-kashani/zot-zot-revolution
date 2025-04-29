@@ -22,7 +22,7 @@ public class NoteDataCreator : MonoBehaviour
 
         midiFile = ReadFile(fileName);
 
-        ConvertMidiToVectors();
+        StartCoroutine(Wait());
     }
 
     // Update is called once per frame
@@ -44,5 +44,14 @@ public class NoteDataCreator : MonoBehaviour
     MidiFile ReadFile(string s)
     {
         return MidiFile.Read(path + s);
+    }
+
+    IEnumerator Wait()
+    {
+        Debug.Log("Waiting");
+
+        yield return new WaitForSeconds(1);
+
+        ConvertMidiToVectors();
     }
 }
