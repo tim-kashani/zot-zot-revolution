@@ -133,7 +133,7 @@ public class Note : MonoBehaviour
 
         noteImage.transform.parent = FindAnyObjectByType<Canvas>().transform;
 
-        float scale = noteImage.transform.localScale.x;
+        float scale = noteImage.transform.localScale.x * 1.1f;
 
         while (f > 0)
         {

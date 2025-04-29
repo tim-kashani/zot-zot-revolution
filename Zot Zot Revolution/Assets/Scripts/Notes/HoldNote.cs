@@ -78,6 +78,8 @@ public class HoldNote : Note
         noteManager.AddScore(CalculateScoreMultiplier(pressTime) * 100);
 
         isBeingPressed = true;
+
+        noteImage.rectTransform.localScale = 1.1f * Vector3.one;
     }
 
     public override void OnRelease()
