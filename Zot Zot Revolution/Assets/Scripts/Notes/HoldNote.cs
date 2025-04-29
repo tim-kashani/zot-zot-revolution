@@ -27,6 +27,15 @@ public class HoldNote : Note
 
         if (!isBeingPressed)
         {
+            if (noteManager.CalculateOffset(pressTime) > 0.5f)
+            {
+                Debug.Log("Too Late");
+
+                fadedOut = true;
+
+                RemoveNote();
+            }
+
             return;
         }
 
