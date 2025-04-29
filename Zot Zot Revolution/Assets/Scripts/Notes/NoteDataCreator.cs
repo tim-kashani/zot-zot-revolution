@@ -45,9 +45,11 @@ public class NoteDataCreator : MonoBehaviour
 
             int noteType = (noteNumber / 12) + 1;
 
-            Debug.Log("Note at " + note.Time / 480 + " time and " + noteNumber + " number and " + noteType + " note type and " + note.Length / 480 + " length");
+            int noteTrack = noteNumber - ((noteType - 1) * 12);
 
-            Vector4 v = new(note.Time / 480, noteNumber - ((noteType - 1) * 12), noteType, note.Length / 480);
+            Debug.Log("Note at " + note.Time / 480 + " time and " + noteTrack + " number and " + noteType + " note type and " + note.Length / 480 + " length");
+
+            Vector4 v = new(note.Time / 480, noteTrack, noteType, note.Length / 480);
 
             newVectors.Add(v);
         }
