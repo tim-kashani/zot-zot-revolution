@@ -44,6 +44,8 @@ public class NoteManager : MonoBehaviour
 
     int currentNoteIndex;
 
+    bool spawned;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -131,12 +133,19 @@ public class NoteManager : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
+        spawned = true;
+
         music.StartMusic();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!spawned)
+        {
+            return;
+        }
+
         noteParent.anchoredPosition = new(0, music.GetCurrentBeat() * Note.ySpacing * -1);
 
         if (currentNoteIndex >= noteList.Count)
