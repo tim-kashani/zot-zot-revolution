@@ -28,8 +28,6 @@ public class Note : MonoBehaviour
         noteManager = FindAnyObjectByType<NoteManager>();
 
         music = FindAnyObjectByType<Music>();
-
-        noteManager.AddMaxScore(100);
     }
 
     private void Update()
@@ -127,6 +125,13 @@ public class Note : MonoBehaviour
     public virtual void SetNoteLength(float f)
     {
         noteLength = f;
+
+        if (noteManager == null)
+        {
+            noteManager = FindAnyObjectByType<NoteManager>();
+        }
+
+        noteManager.AddMaxScore(100);
     }
 
     public float GetPressTime()
