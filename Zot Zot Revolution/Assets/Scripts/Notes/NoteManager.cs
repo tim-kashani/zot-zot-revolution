@@ -55,6 +55,8 @@ public class NoteManager : MonoBehaviour
 
     CharacterBounce characterBounce;
 
+    int currentBeatInt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -157,6 +159,13 @@ public class NoteManager : MonoBehaviour
         if (!spawned)
         {
             return;
+        }
+
+        if (currentBeatInt != (int)music.GetCurrentBeat())
+        {
+            currentBeatInt = (int)music.GetCurrentBeat();
+
+            characterBounce.BeatBounce();
         }
 
         noteParent.anchoredPosition = new(0, music.GetCurrentBeat() * Note.ySpacing * -1);

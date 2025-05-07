@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterBounce : MonoBehaviour
 {
-    float scale = 1, noteBounceScale = 1;
+    float scale = 1, noteBounceScale = 1, beatBounceScale = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -17,19 +17,35 @@ public class CharacterBounce : MonoBehaviour
     {
         if (noteBounceScale < 1)
         {
-            noteBounceScale += Time.deltaTime;
+            noteBounceScale += Time.deltaTime * 2;
         } else
         {
             noteBounceScale = 1;
         }
 
-        scale = Mathf.Lerp(scale, noteBounceScale, Time.deltaTime * 5);
+        if (beatBounceScale < 1)
+        {
+            beatBounceScale += Time.deltaTime * 2;
+        }
+        else
+        {
+            beatBounceScale = 1;
+        }
+
+        float min = Mathf.Min(noteBounceScale, beatBounceScale);
+
+        scale = Mathf.Lerp(scale, min, Time.deltaTime * 10);
 
         transform.localScale = new(1, scale, 1);
     }
 
     public void NoteBounce()
     {
-        noteBounceScale = 0.5f;
+        noteBounceScale = 0.75f;
+    }
+
+    public void BeatBounce()
+    {
+        noteBounceScale = 0.9f;
     }
 }
