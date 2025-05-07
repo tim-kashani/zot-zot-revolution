@@ -25,7 +25,7 @@ public class CharacterBounce : MonoBehaviour
 
         if (beatBounceScale < 1)
         {
-            beatBounceScale += Time.deltaTime * 2;
+            beatBounceScale += Time.deltaTime * 1.5f;
         }
         else
         {
@@ -34,18 +34,25 @@ public class CharacterBounce : MonoBehaviour
 
         float min = Mathf.Min(noteBounceScale, beatBounceScale);
 
-        scale = Mathf.Lerp(scale, min, Time.deltaTime * 10);
+        float lerpSpeed = 7.5f;
+
+        if (scale > min)
+        {
+            lerpSpeed = 15f;
+        }
+
+        scale = Mathf.Lerp(scale, min, Time.deltaTime * lerpSpeed);
 
         transform.localScale = new(1, scale, 1);
     }
 
     public void NoteBounce()
     {
-        noteBounceScale = 0.75f;
+        noteBounceScale = 0.67f;
     }
 
     public void BeatBounce()
     {
-        noteBounceScale = 0.9f;
+        noteBounceScale = 0.85f;
     }
 }
