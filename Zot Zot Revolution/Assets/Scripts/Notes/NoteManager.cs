@@ -6,6 +6,11 @@ using TMPro;
 
 public class NoteManager : MonoBehaviour
 {
+    public enum HitTiming
+    {
+        PERFECT, GREAT, GOOD, OK, MISS
+    }
+
     [Header("Debug")]
 
     // x is time
@@ -322,6 +327,28 @@ public class NoteManager : MonoBehaviour
         characterBounce.NoteBounce();
     }
 
+    public void DisplayTiming(float multiplier)
+    {
+        HitTiming hitTiming = HitTiming.PERFECT;
+
+        if (multiplier < 1)
+        {
+            hitTiming = HitTiming.GREAT;
+
+            if (multiplier < 0.9f)
+            {
+                hitTiming = HitTiming.GOOD;
+
+                if (multiplier < 0.75f)
+                {
+                    hitTiming = HitTiming.OK;
+                }
+            }
+        }
+
+        SpawnTimingDisplay(hitTiming);
+    }
+
     void UpdateScoreText()
     {
         scoreText.text = "Score: " + score.ToString("00000");
@@ -330,6 +357,11 @@ public class NoteManager : MonoBehaviour
     void UpdateMaxScoreText()
     {
         maxScoreText.text = "Max Score (Testing): " + maxScore.ToString("00000");
+    }
+
+    void SpawnTimingDisplay(HitTiming hitTiming)
+    {
+
     }
 
     public float CalculateOffset(float beat)

@@ -108,6 +108,8 @@ public class Note : MonoBehaviour
 
         float score = scoreMultiplier * multiplier * multiplier;
 
+        noteManager.DisplayTiming(multiplier);
+
         return score;
     }
 
