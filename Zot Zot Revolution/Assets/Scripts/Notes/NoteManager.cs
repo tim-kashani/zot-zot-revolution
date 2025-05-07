@@ -64,7 +64,7 @@ public class NoteManager : MonoBehaviour
 
     CharacterBounce characterBounce;
 
-    int currentBeatInt;
+    int currentBeatInt = -1;
 
     // Start is called before the first frame update
     void Start()
