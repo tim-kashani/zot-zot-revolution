@@ -7,22 +7,22 @@ public class HitTimingDisplay : MonoBehaviour
 {
     [SerializeField] TMP_Text text;
 
-    float alpha, position;
+    float alpha = 1, position;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        alpha = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        alpha -= Time.deltaTime * 2.5f;
+        alpha -= Time.deltaTime;
 
         text.color = new(1, 1, 1, alpha);
 
-        position += 150 * Time.deltaTime;
+        position += 250 * Time.deltaTime;
 
         text.rectTransform.localPosition = new(0, position);
     }
