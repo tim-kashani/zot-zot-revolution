@@ -53,6 +53,8 @@ public class NoteManager : MonoBehaviour
 
     AudioSource audioSource;
 
+    CharacterBounce characterBounce;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +66,8 @@ public class NoteManager : MonoBehaviour
         //StartCoroutine(StartMusicDelayed());
 
         audioSource = GetComponent<AudioSource>();
+
+        characterBounce = FindAnyObjectByType<CharacterBounce>();
     }
 
     public void Spawn(List<Vector4> notes)
@@ -305,6 +309,8 @@ public class NoteManager : MonoBehaviour
     public void HitNote()
     {
         audioSource.PlayOneShot(hitSFX);
+
+        characterBounce.NoteBounce();
     }
 
     void UpdateScoreText()
