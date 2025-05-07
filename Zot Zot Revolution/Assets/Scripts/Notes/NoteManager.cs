@@ -43,6 +43,10 @@ public class NoteManager : MonoBehaviour
 
     [SerializeField] TMP_Text maxScoreText;
 
+    [SerializeField] RectTransform hitTimingDisplayParent;
+
+    [SerializeField] HitTimingDisplay hitTimingDisplay;
+
     [Header("Sound Effects")]
     [SerializeField] AudioClip hitSFX;
 
@@ -361,7 +365,9 @@ public class NoteManager : MonoBehaviour
 
     void SpawnTimingDisplay(HitTiming hitTiming)
     {
+        HitTimingDisplay display = Instantiate(hitTimingDisplay, hitTimingDisplayParent);
 
+        display.SetHitTiming(hitTiming);
     }
 
     public float CalculateOffset(float beat)
