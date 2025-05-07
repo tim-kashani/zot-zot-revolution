@@ -92,7 +92,7 @@ public class Note : MonoBehaviour
 
         float abs = Mathf.Abs(offset);
 
-        float subtraction = abs - 0.075f;
+        float subtraction = abs - 0.05f;
 
         if (subtraction < 0)
         {
