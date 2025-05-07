@@ -18,11 +18,11 @@ public class HitTimingDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        alpha -= Time.deltaTime - 2.5f;
+        alpha -= Time.deltaTime * 2.5f;
 
         text.color = new(1, 1, 1, alpha);
 
-        position += 100 * Time.deltaTime;
+        position += 150 * Time.deltaTime;
 
         text.rectTransform.localPosition = new(0, position);
     }

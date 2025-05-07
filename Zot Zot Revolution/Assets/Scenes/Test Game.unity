@@ -642,6 +642,17 @@ PrefabInstance:
       propertyPath: maxScoreText
       value: 
       objectReference: {fileID: 5037557216614071173}
+    - target: {fileID: 3953121921298516487, guid: 33d6b97b68a2247549cc5b68d13aeeaf,
+        type: 3}
+      propertyPath: hitTimingDisplay
+      value: 
+      objectReference: {fileID: 4240240987940059030, guid: 84eec75a286e142918a8605e09e6e5d6,
+        type: 3}
+    - target: {fileID: 3953121921298516487, guid: 33d6b97b68a2247549cc5b68d13aeeaf,
+        type: 3}
+      propertyPath: hitTimingDisplayParent
+      value: 
+      objectReference: {fileID: 5037557216614071174}
     - target: {fileID: 4089795072943100564, guid: 33d6b97b68a2247549cc5b68d13aeeaf,
         type: 3}
       propertyPath: m_Name
@@ -855,6 +866,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &5037557216614071174 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2618278062141933240, guid: 1a623f828722843b38afa4d6c7bb713a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5037557216614071170}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5218478205439836837
 PrefabInstance:
   m_ObjectHideFlags: 0

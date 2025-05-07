@@ -339,11 +339,11 @@ public class NoteManager : MonoBehaviour
         {
             hitTiming = HitTiming.GREAT;
 
-            if (multiplier < 0.9f)
+            if (multiplier < 0.95f)
             {
                 hitTiming = HitTiming.GOOD;
 
-                if (multiplier < 0.75f)
+                if (multiplier < 0.9f)
                 {
                     hitTiming = HitTiming.OK;
                 }
