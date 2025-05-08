@@ -14,4 +14,6 @@ public class SongData : ScriptableObject
     public AudioClip song;
 
     public string midiFilePath;
+
+    public Texture2D characterTexture;
 }
