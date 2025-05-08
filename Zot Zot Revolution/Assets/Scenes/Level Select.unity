@@ -982,6 +982,7 @@ MonoBehaviour:
     type: 3}
   levelNameText: {fileID: 953613395}
   levelButtonParent: {fileID: 1824681604}
+  characterImage: {fileID: 365970653}
 --- !u!1 &875139582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2346,6 +2347,7 @@ GameObject:
   - component: {fileID: 1619638169}
   - component: {fileID: 1619638171}
   - component: {fileID: 1619638170}
+  - component: {fileID: 1619638172}
   m_Layer: 5
   m_Name: Speech Bubble
   m_TagString: Untagged
@@ -2410,6 +2412,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619638168}
   m_CullTransparentMesh: 1
+--- !u!114 &1619638172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619638168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45286c8e8c07429a844d30e992f764a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 0, y: 0, z: -25}
 --- !u!1 &1673760881
 GameObject:
   m_ObjectHideFlags: 0

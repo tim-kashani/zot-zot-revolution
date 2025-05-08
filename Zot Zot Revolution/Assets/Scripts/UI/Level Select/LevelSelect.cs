@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class LevelSelect : MonoBehaviour
 {
@@ -13,9 +14,13 @@ public class LevelSelect : MonoBehaviour
 
     [SerializeField] RectTransform levelButtonParent;
 
+    [SerializeField] Image characterImage;
+
     int currentSongIndex;
 
     float currentRotation, lerpedRotation;
+
+    SongData currentSongData;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +38,8 @@ public class LevelSelect : MonoBehaviour
 
     public void SelectLevel(SongData songData)
     {
+        currentSongData = songData;
+
         SetLevelNameText(songData.songName, songData.composerName);
 
         currentSongIndex = GetSongDataIndex(songData);
@@ -43,6 +50,8 @@ public class LevelSelect : MonoBehaviour
         {
             currentRotation -= 360;
         }
+
+        characterImage.sprite = songData.characterSprite;
     }
 
     void SetLevelNameText(string levelName, string composerName)
