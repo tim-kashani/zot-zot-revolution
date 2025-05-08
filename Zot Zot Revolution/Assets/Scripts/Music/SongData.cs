@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SongData : MonoBehaviour
+[CreateAssetMenu]
+public class SongData : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string songName;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string composerName;
+
+    public string characterArtistName;
+
+    public AudioClip song;
+
+    public string midiFilePath;
 }
