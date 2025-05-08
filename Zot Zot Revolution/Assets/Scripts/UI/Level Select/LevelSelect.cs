@@ -37,7 +37,12 @@ public class LevelSelect : MonoBehaviour
 
         currrentSongIndex = GetSongDataIndex(songData);
 
-        currentRotation = (currrentSongIndex * 360 / songDatas.Length) + 90;
+        currentRotation = (currrentSongIndex * 360 / songDatas.Length) + 270;
+
+        while (currentRotation > 180)
+        {
+            currentRotation -= 180;
+        }
     }
 
     void SetLevelNameText(string levelName, string composerName)
@@ -52,7 +57,14 @@ public class LevelSelect : MonoBehaviour
         {
             LevelSelectButton button = Instantiate(levelSelectButton, levelButtonParent);
 
-            button.transform.localRotation = Quaternion.Euler(0, 0, (i * 360 / songDatas.Length) + 90);
+            float rotation = (i * 360 / songDatas.Length) + 270;
+
+            while (rotation > 180)
+            {
+                rotation -= 180;
+            }
+
+            button.transform.localRotation = Quaternion.Euler(0, 0, rotation);
 
             button.SetSongData(songDatas[i]);
         }
