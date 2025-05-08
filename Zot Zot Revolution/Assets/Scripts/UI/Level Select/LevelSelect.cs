@@ -13,7 +13,7 @@ public class LevelSelect : MonoBehaviour
 
     [SerializeField] RectTransform levelButtonParent;
 
-    int currrentSongIndex;
+    int currentSongIndex;
 
     float currentRotation, lerpedRotation;
 
@@ -35,20 +35,20 @@ public class LevelSelect : MonoBehaviour
     {
         SetLevelNameText(songData.songName, songData.composerName);
 
-        currrentSongIndex = GetSongDataIndex(songData);
+        currentSongIndex = GetSongDataIndex(songData);
 
-        currentRotation = (currrentSongIndex * 360 / songDatas.Length) + 270;
+        currentRotation = (currentSongIndex * -360 / songDatas.Length) + 90;
 
-        while (currentRotation > 180)
+        if (currentRotation > 360)
         {
-            currentRotation -= 180;
+            currentRotation -= 360;
         }
     }
 
     void SetLevelNameText(string levelName, string composerName)
     {
         // TODO add rich text
-        levelNameText.text = levelName + " - " + composerName;
+        levelNameText.text = levelName + "<size=75>" + " - " + composerName + "</size>";
     }
 
     void SpawnLevelButtons()
@@ -59,9 +59,9 @@ public class LevelSelect : MonoBehaviour
 
             float rotation = (i * 360 / songDatas.Length) + 270;
 
-            while (rotation > 180)
+            if (rotation > 360)
             {
-                rotation -= 180;
+                rotation -= 360;
             }
 
             button.transform.localRotation = Quaternion.Euler(0, 0, rotation);
