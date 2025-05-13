@@ -10,11 +10,11 @@ public class SpamNote : Note
     // If the player doesn't keep hiting the note in a window of time (around half a second), treat it as letting go of the note
 
     // indicator for how long the player should spam
-    [SerializeField] RectTransform spamBar;
+    [SerializeField] RectTransform spamBar, spamBarBG;
 
     bool isBeingPressed;
 
-    float maxHoldPoints, currentHoldPoints, lastFrame, spamTimer;
+    float maxHoldPoints, currentHoldPoints, lastFrame, spamTimer, maxYSpacing;
 
     private void Update()
     {
@@ -43,7 +43,7 @@ public class SpamNote : Note
 
         if (pressTime <= music.GetCurrentBeat())
         {
-            float pointsDelta = delta * 25;
+            float pointsDelta = delta * 50;
 
             if ((currentHoldPoints + pointsDelta) > maxHoldPoints)
             {
@@ -58,6 +58,8 @@ public class SpamNote : Note
             currentHoldPoints += pointsDelta;
 
             noteManager.AddScore(pointsDelta);
+
+            spamBar.sizeDelta = new(spamBar.sizeDelta.x, maxYSpacing * currentHoldPoints / maxHoldPoints);
 
             if (pressTime + noteLength <= music.GetCurrentBeat())
             {
@@ -79,7 +81,11 @@ public class SpamNote : Note
     {
         base.SetNoteLength(f);
 
-        spamBar.sizeDelta = new(spamBar.sizeDelta.x, f * ySpacing);
+        maxYSpacing = f * ySpacing;
+
+        spamBarBG.sizeDelta = new(spamBar.sizeDelta.x, maxYSpacing);
+
+        spamBar.sizeDelta = new(spamBar.sizeDelta.x, 0);
 
         maxHoldPoints = noteLength * 50;
 

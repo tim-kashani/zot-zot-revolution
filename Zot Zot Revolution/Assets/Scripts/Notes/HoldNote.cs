@@ -13,11 +13,11 @@ public class HoldNote : Note
     // music.GetCurrentBeat() and noteLength is your friend
 
     // indicator for how long the player should hold
-    [SerializeField] RectTransform holdBar;
+    [SerializeField] RectTransform holdBar, holdBarBG;
 
     bool isBeingPressed;
 
-    float maxHoldPoints, currentHoldPoints, lastFrame;
+    float maxHoldPoints, currentHoldPoints, lastFrame, maxYSpacing;
 
     private void Update()
     {
@@ -41,7 +41,7 @@ public class HoldNote : Note
 
         if (pressTime <= music.GetCurrentBeat())
         {
-            float pointsDelta = delta * 25;
+            float pointsDelta = delta * 50;
 
             if ((currentHoldPoints + pointsDelta) > maxHoldPoints)
             {
@@ -56,6 +56,8 @@ public class HoldNote : Note
             currentHoldPoints += pointsDelta;
 
             noteManager.AddScore(pointsDelta);
+
+            holdBar.sizeDelta = new(holdBar.sizeDelta.x, maxYSpacing * currentHoldPoints / maxHoldPoints);
 
             if (pressTime + noteLength <= music.GetCurrentBeat())
             {
@@ -77,7 +79,11 @@ public class HoldNote : Note
     {
         base.SetNoteLength(f);
 
-        holdBar.sizeDelta = new(holdBar.sizeDelta.x, f * ySpacing);
+        maxYSpacing = f * ySpacing;
+
+        holdBarBG.sizeDelta = new(holdBar.sizeDelta.x, maxYSpacing);
+
+        holdBar.sizeDelta = new(holdBar.sizeDelta.x, 0);
 
         maxHoldPoints = noteLength * 50;
 
