@@ -47,6 +47,8 @@ public class NoteManager : MonoBehaviour
 
     [SerializeField] HitTimingDisplay hitTimingDisplay;
 
+    [SerializeField] RectTransform trackBG;
+
     [Header("Sound Effects")]
     [SerializeField] AudioClip hitSFX;
 
@@ -177,7 +179,15 @@ public class NoteManager : MonoBehaviour
             characterBounce.BeatBounce();
         }
 
-        noteParent.anchoredPosition = new(0, music.GetCurrentBeat() * Note.ySpacing * -1);
+        float y = music.GetCurrentBeat() * Note.ySpacing * -1;
+
+        noteParent.anchoredPosition = new(0, y);
+
+        float subtract = (int)(y / 2000);
+
+        float bgSpacing = y - (subtract * 2000);
+
+        trackBG.anchoredPosition = new(0, bgSpacing);
 
         if (currentNoteIndex >= noteList.Count)
         {
