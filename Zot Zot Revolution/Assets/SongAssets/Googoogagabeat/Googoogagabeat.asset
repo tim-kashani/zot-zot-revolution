@@ -17,4 +17,14 @@ MonoBehaviour:
   characterArtistName: 
   song: {fileID: 8300000, guid: b14b160605b19465cbfbe715bef9b3b0, type: 3}
   midiFilePath: 
-  characterTexture: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: f859c5f2341044e71b8e0828c39bac8c, type: 3}
+  bpm: 0
+  characterName: 
+  unbeatenLevelSelectDialogue: 
+  beatenLevelSelectDialogue: 
+  gradeSDialogue: 
+  gradeADialogue: 
+  gradeBDialogue: 
+  gradeCDialogue: 
+  gradeDDialogue: 
+  gradeFDialogue: 
