@@ -23,6 +23,8 @@ public class Music : MonoBehaviour
 
         bpm = songData.bpm;
 
+        audioSource.clip = songData.song;
+
         noteDataCreator = FindAnyObjectByType<NoteDataCreator>();
 
         noteDataCreator.ReadMidiFile(Application.dataPath + "/" + songData.midiFilePath);
