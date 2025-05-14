@@ -12,7 +12,7 @@ public class LevelSelect : MonoBehaviour
 
     [SerializeField] TMP_Text levelNameText;
 
-    [SerializeField] RectTransform levelButtonParent;
+    [SerializeField] RectTransform levelButtonParent, levelPanel;
 
     [SerializeField] Image characterImage;
 
@@ -38,6 +38,13 @@ public class LevelSelect : MonoBehaviour
 
     public void SelectLevel(SongData songData)
     {
+        if (currentSongData == songData)
+        {
+            return;
+        }
+
+        StopCoroutine(SwitchLevelPanel(currentSongData));
+
         currentSongData = songData;
 
         SetLevelNameText(songData.songName, songData.composerName);
@@ -51,7 +58,7 @@ public class LevelSelect : MonoBehaviour
             currentRotation -= 360;
         }
 
-        characterImage.sprite = songData.characterSprite;
+        StartCoroutine(SwitchLevelPanel(currentSongData));
     }
 
     void SetLevelNameText(string levelName, string composerName)
@@ -90,5 +97,44 @@ public class LevelSelect : MonoBehaviour
         }
 
         return -1;
+    }
+
+    IEnumerator SwitchLevelPanel(SongData songData)
+    {
+        float f = 0;
+
+        while (f < 1)
+        {
+            f += Time.deltaTime * 5;
+
+            if (f > 1)
+            {
+                f = 1;
+            }
+
+            float pow = Mathf.Pow(f, 0.75f);
+
+            levelPanel.anchoredPosition = new(0, pow * -750);
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        characterImage.sprite = songData.characterSprite;
+
+        while (f > 0)
+        {
+            f -= Time.deltaTime * 5;
+
+            if (f < 0)
+            {
+                f = 0;
+            }
+
+            float pow = Mathf.Pow(f, 1.5f);
+
+            levelPanel.anchoredPosition = new(0, pow * -750);
+
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
