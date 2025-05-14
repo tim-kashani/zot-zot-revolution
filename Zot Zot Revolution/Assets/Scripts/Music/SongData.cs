@@ -16,4 +16,6 @@ public class SongData : ScriptableObject
     public string midiFilePath;
 
     public Sprite characterSprite;
+
+    public float bpm;
 }

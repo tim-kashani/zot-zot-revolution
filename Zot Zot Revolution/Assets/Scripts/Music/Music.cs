@@ -6,12 +6,26 @@ public class Music : MonoBehaviour
 {
     [SerializeField] float bpm = 120;
 
+    [SerializeField] SongData testSongData;
+
     AudioSource audioSource;
+
+    NoteDataCreator noteDataCreator;
+
+    SongData songData;
 
     // Start is called before the first frame update
     void Start()
     {
+        songData = testSongData;
+
         audioSource = GetComponent<AudioSource>();
+
+        bpm = songData.bpm;
+
+        noteDataCreator = FindAnyObjectByType<NoteDataCreator>();
+
+        noteDataCreator.ReadMidiFile(Application.dataPath + "/" + songData.midiFilePath);
     }
 
     // Update is called once per frame

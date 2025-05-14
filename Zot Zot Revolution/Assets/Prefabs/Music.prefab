@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bpm: 120
+  testSongData: {fileID: 11400000, guid: 4ab573062d2f04ff5acddc65ec00a683, type: 2}
 --- !u!82 &758532501367716591
 AudioSource:
   m_ObjectHideFlags: 0

@@ -17,4 +17,5 @@ MonoBehaviour:
   characterArtistName: 
   song: {fileID: 8300000, guid: 257dbb3509e184ab5ae83a9e2041daa2, type: 3}
   midiFilePath: SongAssets/Swag/Swag.mid
-  characterTexture: {fileID: 0}
+  characterSprite: {fileID: 0}
+  bpm: 185

@@ -18,9 +18,16 @@ public class NoteDataCreator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        path = Application.dataPath + "/MidiFiles/";
+        /*path = Application.dataPath + "/MidiFiles/";
 
         midiFile = ReadFile(fileName);
+
+        StartCoroutine(Wait());*/
+    }
+
+    public void ReadMidiFile(string filePath)
+    {
+        midiFile = ReadFile(filePath);
 
         StartCoroutine(Wait());
     }
