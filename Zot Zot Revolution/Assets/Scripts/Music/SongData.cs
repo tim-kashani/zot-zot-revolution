@@ -18,4 +18,22 @@ public class SongData : ScriptableObject
     public Sprite characterSprite;
 
     public float bpm;
+
+    public string characterName;
+
+    public string unbeatenLevelSelectDialogue;
+
+    public string beatenLevelSelectDialogue;
+
+    public string gradeSDialogue;
+
+    public string gradeADialogue;
+
+    public string gradeBDialogue;
+
+    public string gradeCDialogue;
+
+    public string gradeDDialogue;
+
+    public string gradeFDialogue;
 }
