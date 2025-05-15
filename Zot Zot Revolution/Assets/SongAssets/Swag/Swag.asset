@@ -19,3 +19,12 @@ MonoBehaviour:
   midiFilePath: SongAssets/Swag/Swag.mid
   characterSprite: {fileID: 0}
   bpm: 185
+  characterName: Max Sparkfire
+  unbeatenLevelSelectDialogue: It's spark time.
+  beatenLevelSelectDialogue: Sister, I have avenged you. Spark on.
+  gradeSDialogue: SPARKING GOLD!
+  gradeADialogue: Sufficiently sparking. Sister, I will see you soon.
+  gradeBDialogue: Not bad. I shall train further. Spark it up.
+  gradeCDialogue: I can do better. For spark's sake.
+  gradeDDialogue: That performance was a sputter! Not a spark at all.
+  gradeFDialogue: Sister, I have failed you... Sparking hell.

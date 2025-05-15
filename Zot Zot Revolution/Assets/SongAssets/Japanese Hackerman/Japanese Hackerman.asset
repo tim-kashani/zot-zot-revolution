@@ -18,3 +18,13 @@ MonoBehaviour:
   song: {fileID: 8300000, guid: 76e8dd14174ec44548157e2ca023c1b9, type: 3}
   midiFilePath: 
   characterSprite: {fileID: 21300000, guid: 3f894d64536964ba48b281be7d936724, type: 3}
+  bpm: 0
+  characterName: Kaishain-san
+  unbeatenLevelSelectDialogue: Let's get to work.
+  beatenLevelSelectDialogue: Another job well done.
+  gradeSDialogue: I'd better get a raise for this!
+  gradeADialogue: All in a day's work.
+  gradeBDialogue: Good work today. We'll do better tomorrow.
+  gradeCDialogue: Another day, another Japanese dollar.
+  gradeDDialogue: 'That lasted longer than a bad work day. '
+  gradeFDialogue: This is way above my pay grade...
