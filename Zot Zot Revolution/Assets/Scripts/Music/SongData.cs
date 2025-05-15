@@ -43,6 +43,8 @@ public class SongData : ScriptableObject
 
     public Color trackColor = new(0.5f, 0.5f, 0.5f, 0.5f);
 
+    public Color trackBarColor = Color.white;
+
     public Color noteColor = Color.white;
 
     public Color noteIndicatorColor = Color.gray;
