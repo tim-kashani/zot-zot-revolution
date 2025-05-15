@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HoldNote : Note
 {
@@ -18,6 +19,15 @@ public class HoldNote : Note
     bool isBeingPressed;
 
     float maxHoldPoints, currentHoldPoints, lastFrame, maxYSpacing;
+
+    protected override void NoteStart()
+    {
+        base.NoteStart();
+
+        holdBar.GetComponent<Image>().color = music.GetSongData().noteColor;
+
+        holdBarBG.GetComponent<Image>().color = music.GetSongData().noteIndicatorColor;
+    }
 
     private void Update()
     {

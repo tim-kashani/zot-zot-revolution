@@ -44,4 +44,6 @@ public class SongData : ScriptableObject
     public Color trackColor = new(0.5f, 0.5f, 0.5f, 0.5f);
 
     public Color noteColor = Color.white;
+
+    public Color noteIndicatorColor = Color.gray;
 }

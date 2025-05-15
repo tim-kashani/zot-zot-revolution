@@ -30,6 +30,13 @@ public class Note : MonoBehaviour
         music = FindAnyObjectByType<Music>();
 
         noteImage.color = music.GetSongData().noteColor;
+
+        NoteStart();
+    }
+
+    protected virtual void NoteStart()
+    {
+
     }
 
     private void Update()
@@ -158,8 +165,6 @@ public class Note : MonoBehaviour
     protected IEnumerator FadeOutNote()
     {
         fadedOut = true;
-
-        noteImage.color = Color.white;
 
         float f = 1;
 

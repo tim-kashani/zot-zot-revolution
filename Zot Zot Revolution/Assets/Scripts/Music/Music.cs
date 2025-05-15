@@ -9,7 +9,7 @@ public class Music : MonoBehaviour
 
     [SerializeField] SongData testSongData;
 
-    [SerializeField] Image[] trackImages;
+    [SerializeField] Image[] trackImages, noteIndicatorImages;
 
     AudioSource audioSource;
 
@@ -35,6 +35,11 @@ public class Music : MonoBehaviour
         foreach (Image trackImage in trackImages)
         {
             trackImage.color = songData.trackColor;
+        }
+
+        foreach (Image noteIndicatorImage in noteIndicatorImages)
+        {
+            noteIndicatorImage.color = songData.noteIndicatorColor;
         }
 
         Camera.main.backgroundColor = songData.bgColor;

@@ -32,3 +32,4 @@ MonoBehaviour:
   bgColor: {r: 0.5377358, g: 0, b: 0.74509805, a: 1}
   trackColor: {r: 0.32653144, g: 0.23349056, b: 0.5, a: 0.5}
   noteColor: {r: 1, g: 1, b: 0, a: 1}
+  noteIndicatorColor: {r: 0.5019608, g: 0.5019608, b: 0, a: 1}
