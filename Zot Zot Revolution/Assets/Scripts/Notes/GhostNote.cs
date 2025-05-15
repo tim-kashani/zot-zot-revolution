@@ -47,6 +47,6 @@ public class GhostNote : Note
     {
         Debug.Log("Alpha: " + f);
 
-        noteImage.color = new(1, 1, 1, f);
+        noteImage.color = new(noteImage.color.r, noteImage.color.g, noteImage.color.b, f);
     }
 }

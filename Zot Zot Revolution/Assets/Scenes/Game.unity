@@ -553,6 +553,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1457534453 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8353147399417885767, guid: 1a623f828722843b38afa4d6c7bb713a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5037557216614071170}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1713790387
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +716,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2028567318 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2776978507303001233, guid: 1a623f828722843b38afa4d6c7bb713a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5037557216614071170}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &407592496156525332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1036,6 +1060,26 @@ PrefabInstance:
       propertyPath: bpm
       value: 185
       objectReference: {fileID: 0}
+    - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
+        type: 3}
+      propertyPath: trackImage
+      value: 
+      objectReference: {fileID: 2028567318}
+    - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
+        type: 3}
+      propertyPath: trackImages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
+        type: 3}
+      propertyPath: trackImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 2028567318}
+    - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
+        type: 3}
+      propertyPath: trackImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 1457534453}
     - target: {fileID: 5095839724672662721, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
         type: 3}
       propertyPath: m_Name

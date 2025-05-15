@@ -28,6 +28,8 @@ public class Note : MonoBehaviour
         noteManager = FindAnyObjectByType<NoteManager>();
 
         music = FindAnyObjectByType<Music>();
+
+        noteImage.color = music.GetSongData().noteColor;
     }
 
     private void Update()
@@ -178,7 +180,7 @@ public class Note : MonoBehaviour
                 f = 0;
             }
 
-            noteImage.color = new(1, 1, 1, f);
+            noteImage.color = new(noteImage.color.r, noteImage.color.g, noteImage.color.b, f);
 
             noteImage.rectTransform.position = position;
 

@@ -38,4 +38,10 @@ public class SongData : ScriptableObject
     public string gradeDDialogue;
 
     public string gradeFDialogue;
+
+    public Color bgColor = Color.white;
+
+    public Color trackColor = new(0.5f, 0.5f, 0.5f, 0.5f);
+
+    public Color noteColor = Color.white;
 }

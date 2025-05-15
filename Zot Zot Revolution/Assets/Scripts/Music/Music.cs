@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Music : MonoBehaviour
 {
     [SerializeField] float bpm = 120;
 
     [SerializeField] SongData testSongData;
+
+    [SerializeField] Image[] trackImages;
 
     AudioSource audioSource;
 
@@ -28,6 +31,13 @@ public class Music : MonoBehaviour
         noteDataCreator = FindAnyObjectByType<NoteDataCreator>();
 
         noteDataCreator.ReadMidiFile(Application.dataPath + "/" + songData.midiFilePath);
+
+        foreach (Image trackImage in trackImages)
+        {
+            trackImage.color = songData.trackColor;
+        }
+
+        Camera.main.backgroundColor = songData.bgColor;
     }
 
     // Update is called once per frame
@@ -49,5 +59,10 @@ public class Music : MonoBehaviour
     public float GetCurrentBeat()
     {
         return audioSource.time * bpm / 60;
+    }
+
+    public SongData GetSongData()
+    {
+        return songData;
     }
 }
