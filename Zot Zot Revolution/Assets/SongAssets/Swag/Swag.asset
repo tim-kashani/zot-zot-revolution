@@ -30,6 +30,8 @@ MonoBehaviour:
   gradeDDialogue: That performance was a sputter! Not a spark at all.
   gradeFDialogue: Sister, I have failed you... Sparking hell.
   bgColor: {r: 0.5377358, g: 0, b: 0.74509805, a: 1}
-  trackColor: {r: 0.42323783, g: 0.31167677, b: 0.6415094, a: 0.78431374}
+  trackColor: {r: 0.42323783, g: 0.31167677, b: 0.6415094, a: 0.88235295}
+  trackBarColor: {r: 0.5967934, g: 0.34825563, b: 0.8113208, a: 1}
   noteColor: {r: 1, g: 1, b: 0, a: 1}
-  noteIndicatorColor: {r: 0.5019608, g: 0.5019608, b: 0, a: 1}
+  noteBarColor: {r: 0.5019608, g: 0.5019608, b: 0, a: 1}
+  noteIndicatorColor: {r: 0.44332588, g: 0.1517444, b: 0.5849056, a: 1}

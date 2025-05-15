@@ -26,7 +26,7 @@ public class HoldNote : Note
 
         holdBar.GetComponent<Image>().color = music.GetSongData().noteColor;
 
-        holdBarBG.GetComponent<Image>().color = music.GetSongData().noteIndicatorColor;
+        holdBarBG.GetComponent<Image>().color = music.GetSongData().noteBarColor;
     }
 
     private void Update()

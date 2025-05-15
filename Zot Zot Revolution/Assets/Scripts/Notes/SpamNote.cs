@@ -23,7 +23,7 @@ public class SpamNote : Note
 
         spamBar.GetComponent<Image>().color = music.GetSongData().noteColor;
 
-        spamBarBG.GetComponent<Image>().color = music.GetSongData().noteIndicatorColor;
+        spamBarBG.GetComponent<Image>().color = music.GetSongData().noteBarColor;
     }
 
     private void Update()
