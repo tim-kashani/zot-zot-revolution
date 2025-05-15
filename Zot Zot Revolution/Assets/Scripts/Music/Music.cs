@@ -17,6 +17,10 @@ public class Music : MonoBehaviour
 
     SongData songData;
 
+    bool isFinished;
+
+    NoteManager noteManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,17 +52,29 @@ public class Music : MonoBehaviour
         }
 
         Camera.main.backgroundColor = songData.bgColor;
+
+        noteManager = FindAnyObjectByType<NoteManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if ((audioSource.time + 2) >= audioSource.clip.length && !isFinished)
+        {
+            isFinished = true;
+
+            FinishLevel();
+        }
     }
 
     public void StartMusic()
     {
         audioSource.Play();
+    }
+
+    public void FinishLevel()
+    {
+        Debug.Log("Finished level with a grade of " + noteManager.GetLetterGrade());
     }
 
     public float GetBPM()
