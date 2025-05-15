@@ -17,4 +17,14 @@ MonoBehaviour:
   characterArtistName: 
   song: {fileID: 8300000, guid: 06f7568549dd042a0b0421a1329b6dd1, type: 3}
   midiFilePath: 
-  characterTexture: {fileID: 0}
+  characterSprite: {fileID: 0}
+  bpm: 0
+  characterName: William (Aura) Farmer
+  unbeatenLevelSelectDialogue: Hollup, lemme cook.
+  beatenLevelSelectDialogue: Yeahh! Fax my brother! Spit your sh t indeed!
+  gradeSDialogue: 
+  gradeADialogue: 
+  gradeBDialogue: 
+  gradeCDialogue: 
+  gradeDDialogue: 
+  gradeFDialogue: 

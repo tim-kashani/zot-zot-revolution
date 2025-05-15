@@ -20,11 +20,15 @@ MonoBehaviour:
   characterSprite: {fileID: 21300000, guid: 086277d01f20a45138c1029711e359d8, type: 3}
   bpm: 160
   characterName: Ronald Ben Hall
-  unbeatenLevelSelectDialogue: 
-  beatenLevelSelectDialogue: 
-  gradeSDialogue: 
-  gradeADialogue: 
-  gradeBDialogue: 
-  gradeCDialogue: 
-  gradeDDialogue: 
-  gradeFDialogue: 
+  unbeatenLevelSelectDialogue: Yeahh good choice vro do you dare enter the dreaded
+    dbh 5011 aha
+  beatenLevelSelectDialogue: Ummm i think you alr beat this song but you can replay
+    it if you want i mean it's kind of a banger
+  gradeSDialogue: 'ZZAMN ur kinda cracked with a capital c and by kinda i mean super
+    mega hecka ultra '
+  gradeADialogue: Wait you might be goated?? howd you even do that gro
+  gradeBDialogue: yeahh good job nice that's like at least a 3.0 gpa i think
+  gradeCDialogue: i mean you passed like that's a passing grade
+  gradeDDialogue: uh i think you might needa train i think you can do it someday
+    tho trust
+  gradeFDialogue: 'dude you frickin suck at this game i cant even lie '
