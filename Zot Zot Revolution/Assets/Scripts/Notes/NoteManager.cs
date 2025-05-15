@@ -11,6 +11,11 @@ public class NoteManager : MonoBehaviour
         PERFECT, GREAT, GOOD, OK, MISS
     }
 
+    public enum LetterGrade
+    {
+        S, A, B, C, D, F
+    }
+
     [Header("Debug")]
 
     // x is time
@@ -162,6 +167,8 @@ public class NoteManager : MonoBehaviour
         spawned = true;
 
         music.StartMusic();
+
+        characterBounce.BeatBounce();
     }
 
     // Update is called once per frame
@@ -361,6 +368,34 @@ public class NoteManager : MonoBehaviour
         }
 
         SpawnTimingDisplay(hitTiming);
+    }
+
+    public LetterGrade GetLetterGrade()
+    {
+        float percent = 100 * score / maxScore;
+
+        if (percent >= 95)
+        {
+            return LetterGrade.S;
+        }
+        else if (percent >= 90)
+        {
+            return LetterGrade.A;
+        }
+        else if (percent >= 80)
+        {
+            return LetterGrade.B;
+        }
+        else if (percent >= 70)
+        {
+            return LetterGrade.C;
+        }
+        else if (percent >= 60)
+        {
+            return LetterGrade.D;
+        }
+
+        return LetterGrade.F;
     }
 
     void UpdateScoreText()
