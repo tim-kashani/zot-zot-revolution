@@ -15,6 +15,17 @@ MonoBehaviour:
   songName: Zhost Zhuntin Ronny
   composerName: Robert Gellner
   characterArtistName: 
+  difficulty: 
   song: {fileID: 8300000, guid: 9074c7869efd84b1ba67d35728e40472, type: 3}
   midiFilePath: 
-  characterTexture: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: 0559b0af86bf24f4eaee94c824ecb8bb, type: 3}
+  bpm: 0
+  characterName: Ronny
+  unbeatenLevelSelectDialogue: Is this... Another haunting?
+  beatenLevelSelectDialogue: Foolish ghouls... This area is under my protection!
+  gradeSDialogue: Return, foul spirits, from whence you came!  .....purrrrrrrrrrrrrr
+  gradeADialogue: Your influence is not tolerated here, spirits!
+  gradeBDialogue: This beat has been purified.
+  gradeCDialogue: By the skin of my whiskers...
+  gradeDDialogue: The devil's influence here is too strong...
+  gradeFDialogue: This exorcism... Has failed...

@@ -15,6 +15,17 @@ MonoBehaviour:
   songName: Three4Three
   composerName: Shreshth Sarin
   characterArtistName: 
+  difficulty: 
   song: {fileID: 8300000, guid: 698973657f94f47e5b507286118d90f3, type: 3}
   midiFilePath: 
-  characterTexture: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: 80422d5dc50484bdaaa32bd12833a45b, type: 3}
+  bpm: 0
+  characterName: "\u30E4\u30AF\u30B6 (Yakuza)"
+  unbeatenLevelSelectDialogue: You chose the right one.
+  beatenLevelSelectDialogue: Back for seconds?
+  gradeSDialogue: 'Unbea-ten. As always. '
+  gradeADialogue: Did you see that? I eight.
+  gradeBDialogue: B? I suppose that counts.
+  gradeCDialogue: I passed, but with zero room for error...
+  gradeDDialogue: Tch. Maybe third times the charm?
+  gradeFDialogue: Four-get about it.

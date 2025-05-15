@@ -15,6 +15,7 @@ MonoBehaviour:
   songName: Pistol Shrimp
   composerName: Jadon Ark
   characterArtistName: Nancy Duong
+  difficulty: Very Hard
   song: {fileID: 8300000, guid: 47d669293d6c7432c944445c38c6549d, type: 3}
   midiFilePath: 
   characterSprite: {fileID: 21300000, guid: cbe5b8390fe054e29bbc4320fd461da4, type: 3}

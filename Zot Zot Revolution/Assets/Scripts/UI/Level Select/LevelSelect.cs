@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
@@ -10,11 +11,13 @@ public class LevelSelect : MonoBehaviour
 
     [SerializeField] LevelSelectButton levelSelectButton;
 
-    [SerializeField] TMP_Text levelNameText;
+    [SerializeField] TMP_Text levelNameText, dialogueText;
 
     [SerializeField] RectTransform levelButtonParent, levelPanel;
 
     [SerializeField] Image characterImage;
+
+    [SerializeField] Animator fadeAnimator;
 
     int currentSongIndex;
 
@@ -26,6 +29,8 @@ public class LevelSelect : MonoBehaviour
     void Start()
     {
         SpawnLevelButtons();
+
+        SelectLevel(songDatas[0]);
     }
 
     // Update is called once per frame
@@ -59,6 +64,13 @@ public class LevelSelect : MonoBehaviour
         }
 
         StartCoroutine(SwitchLevelPanel(currentSongData));
+    }
+
+    public void StartButton()
+    {
+        fadeAnimator.Play("Out");
+
+        StartCoroutine(LoadLevel(currentSongData));
     }
 
     void SetLevelNameText(string levelName, string composerName)
@@ -121,6 +133,8 @@ public class LevelSelect : MonoBehaviour
 
         characterImage.sprite = songData.characterSprite;
 
+        dialogueText.text = songData.unbeatenLevelSelectDialogue;
+
         while (f > 0)
         {
             f -= Time.deltaTime * 5;
@@ -136,5 +150,12 @@ public class LevelSelect : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    IEnumerator LoadLevel(SongData songData)
+    {
+        yield return new WaitForSeconds(2);
+
+        SceneManager.LoadScene("Game");
     }
 }

@@ -11,6 +11,8 @@ public class SongData : ScriptableObject
 
     public string characterArtistName;
 
+    public string difficulty = "Easy";
+
     public AudioClip song;
 
     public string midiFilePath;

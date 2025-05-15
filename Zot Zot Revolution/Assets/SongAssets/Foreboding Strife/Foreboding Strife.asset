@@ -15,9 +15,10 @@ MonoBehaviour:
   songName: Foreboding Strife
   composerName: Haley Vlahos
   characterArtistName: 
+  difficulty: 
   song: {fileID: 8300000, guid: 06f7568549dd042a0b0421a1329b6dd1, type: 3}
   midiFilePath: 
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: d5046799a518c43d7a21471393855cd5, type: 3}
   bpm: 0
   characterName: William (Aura) Farmer
   unbeatenLevelSelectDialogue: Hollup, lemme cook.

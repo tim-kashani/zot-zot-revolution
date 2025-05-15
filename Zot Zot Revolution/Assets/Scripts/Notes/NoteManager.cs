@@ -157,7 +157,7 @@ public class NoteManager : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(2);
 
         spawned = true;
 
