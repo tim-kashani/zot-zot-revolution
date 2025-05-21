@@ -19,6 +19,8 @@ public class SongData : ScriptableObject
 
     public Sprite characterSprite;
 
+    public Texture2D characterTexture;
+
     public float bpm;
 
     public string characterName;

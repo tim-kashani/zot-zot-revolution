@@ -11,6 +11,8 @@ public class Music : MonoBehaviour
 
     [SerializeField] Image[] trackImages, noteIndicatorImages, trackBarImages;
 
+    [SerializeField] MeshRenderer character;
+
     AudioSource audioSource;
 
     NoteDataCreator noteDataCreator;
@@ -59,6 +61,8 @@ public class Music : MonoBehaviour
         Camera.main.backgroundColor = songData.bgColor;
 
         noteManager = FindAnyObjectByType<NoteManager>();
+
+        character.material.SetTexture("_Texture2D", songData.characterTexture);
     }
 
     // Update is called once per frame

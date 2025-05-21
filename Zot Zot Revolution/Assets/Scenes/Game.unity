@@ -1307,6 +1307,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
         type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 1713790390}
+    - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
+        type: 3}
       propertyPath: trackImage
       value: 
       objectReference: {fileID: 2028567318}

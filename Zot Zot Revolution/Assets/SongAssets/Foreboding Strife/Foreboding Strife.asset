@@ -17,9 +17,10 @@ MonoBehaviour:
   characterArtistName: 
   difficulty: 
   song: {fileID: 8300000, guid: 06f7568549dd042a0b0421a1329b6dd1, type: 3}
-  midiFilePath: 
+  midiFilePath: SongAssets/Swag/Swag.mid
   characterSprite: {fileID: 21300000, guid: d5046799a518c43d7a21471393855cd5, type: 3}
-  bpm: 0
+  characterTexture: {fileID: 2800000, guid: d5046799a518c43d7a21471393855cd5, type: 3}
+  bpm: 120
   characterName: William (Aura) Farmer
   unbeatenLevelSelectDialogue: Hollup, lemme cook.
   beatenLevelSelectDialogue: Yeahh! Fax my brother! Spit your sh t indeed!
@@ -29,3 +30,9 @@ MonoBehaviour:
   gradeCDialogue: A-ha- welp.. *Hands together; licks lips* Still got ma dreads.
   gradeDDialogue: It's over... I'm so washed...
   gradeFDialogue: Guhgh... my... my aura....
+  bgColor: {r: 1, g: 1, b: 1, a: 1}
+  trackColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.88235295}
+  trackBarColor: {r: 1, g: 0.2216981, b: 0.2216981, a: 1}
+  noteColor: {r: 1, g: 0.6933962, b: 0.6933962, a: 1}
+  noteBarColor: {r: 0.6132076, g: 0.3326362, b: 0.3326362, a: 1}
+  noteIndicatorColor: {r: 0.5283019, g: 0.38127446, b: 0.38127446, a: 1}

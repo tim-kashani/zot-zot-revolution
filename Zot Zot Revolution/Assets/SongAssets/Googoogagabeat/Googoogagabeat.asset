@@ -15,10 +15,12 @@ MonoBehaviour:
   songName: Googoogagabeat
   composerName: Liam Burley
   characterArtistName: 
+  difficulty: Easy
   song: {fileID: 8300000, guid: b14b160605b19465cbfbe715bef9b3b0, type: 3}
-  midiFilePath: 
+  midiFilePath: SongAssets/Swag/Swag.mid
   characterSprite: {fileID: 21300000, guid: f859c5f2341044e71b8e0828c39bac8c, type: 3}
-  bpm: 0
+  characterTexture: {fileID: 2800000, guid: f859c5f2341044e71b8e0828c39bac8c, type: 3}
+  bpm: 120
   characterName: 
   unbeatenLevelSelectDialogue: 
   beatenLevelSelectDialogue: 
@@ -28,3 +30,9 @@ MonoBehaviour:
   gradeCDialogue: 
   gradeDDialogue: 
   gradeFDialogue: 
+  bgColor: {r: 1, g: 1, b: 1, a: 1}
+  trackColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+  trackBarColor: {r: 1, g: 1, b: 1, a: 1}
+  noteColor: {r: 1, g: 1, b: 1, a: 1}
+  noteBarColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  noteIndicatorColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
