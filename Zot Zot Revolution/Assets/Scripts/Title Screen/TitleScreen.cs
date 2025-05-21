@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour
 {
     [SerializeField] RectTransform[] characters;
 
     [SerializeField] AudioSource music;
+
+    [SerializeField] Animator fadeAnimator;
 
     float characterBounce, currentCharacterBounce;
 
@@ -51,7 +54,21 @@ public class TitleScreen : MonoBehaviour
     {
         for (int i = 0; i < characters.Length; i++)
         {
-            characters[i].localScale = new(1, currentCharacterBounce, 1);
+            characters[i].localScale = new(characters[i].localScale.x, currentCharacterBounce, 1);
         }
+    }
+
+    public void StartButton()
+    {
+        fadeAnimator.Play("Out");
+
+        StartCoroutine(StartButtonCoroutine());
+    }
+
+    IEnumerator StartButtonCoroutine()
+    {
+        yield return new WaitForSeconds(2);
+
+        SceneManager.LoadScene("Level Select");
     }
 }

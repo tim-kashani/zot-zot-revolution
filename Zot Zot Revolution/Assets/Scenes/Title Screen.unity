@@ -240,12 +240,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac3809804c6fb492e9b8310854be7362, type: 3}
---- !u!95 &2580347 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5337679014560824305, guid: ac3809804c6fb492e9b8310854be7362,
-    type: 3}
-  m_PrefabInstance: {fileID: 2580346}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2580348 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4886592039568511131, guid: ac3809804c6fb492e9b8310854be7362,
@@ -451,7 +445,7 @@ PrefabInstance:
     - target: {fileID: 3376965392249943519, guid: 48be284d4dcc44ee0946a592dee0483a,
         type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 3942033548537719538, guid: 48be284d4dcc44ee0946a592dee0483a,
         type: 3}
@@ -585,7 +579,7 @@ PrefabInstance:
     - target: {fileID: 3376965392249943519, guid: 48be284d4dcc44ee0946a592dee0483a,
         type: 3}
       propertyPath: m_fontSize
-      value: 72.35
+      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 3942033548537719538, guid: 48be284d4dcc44ee0946a592dee0483a,
         type: 3}
@@ -1509,6 +1503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1170564089}
+  - component: {fileID: 1170564090}
   m_Layer: 0
   m_Name: Title Screen
   m_TagString: Untagged
@@ -1531,6 +1526,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1170564090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170564088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1116894c74e43449d9bbd5a7d6e97360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 578189731}
+  - {fileID: 838773646}
+  - {fileID: 424972459}
+  - {fileID: 764750403}
+  - {fileID: 1333332331}
+  - {fileID: 505526112}
+  - {fileID: 258849892}
+  - {fileID: 1080787855}
+  music: {fileID: 1860900790}
 --- !u!1001 &1333332330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1678,7 +1695,6 @@ GameObject:
   - component: {fileID: 1705775818}
   - component: {fileID: 1705775817}
   - component: {fileID: 1705775816}
-  - component: {fileID: 1705775815}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1686,35 +1702,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1705775815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1705775814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f91f170378e884c8489346a49714a0ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  songDatas:
-  - {fileID: 11400000, guid: a5df7432183ec4e768ba1bae6ccb13f0, type: 2}
-  - {fileID: 11400000, guid: 364866a38447a4dd2a7695e62837a1fc, type: 2}
-  - {fileID: 11400000, guid: 2b3a95c1aa0e543b18452c051c28d6b0, type: 2}
-  - {fileID: 11400000, guid: 9a2196efd0a3c4800b10f3611ae10d0e, type: 2}
-  - {fileID: 11400000, guid: a1b857391a34b47ea88f75d234ac295c, type: 2}
-  - {fileID: 11400000, guid: 4ab573062d2f04ff5acddc65ec00a683, type: 2}
-  - {fileID: 11400000, guid: dad01bf0f53b949bb9be477f48c4f38f, type: 2}
-  - {fileID: 11400000, guid: 12264a0c5340c4ae7bf63311397cb0be, type: 2}
-  levelSelectButton: {fileID: 7636287643749196286, guid: e06a7552c2e1a41d9920a03408095d1e,
-    type: 3}
-  levelNameText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  levelButtonParent: {fileID: 0}
-  levelPanel: {fileID: 0}
-  characterImage: {fileID: 0}
-  fadeAnimator: {fileID: 2580347}
 --- !u!114 &1705775816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1791,10 +1778,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 32235760}
-  - {fileID: 2580348}
   - {fileID: 2022489536}
   - {fileID: 332085634}
   - {fileID: 349313027}
+  - {fileID: 2580348}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2034,7 +2021,7 @@ PrefabInstance:
     - target: {fileID: 3376965392249943519, guid: 48be284d4dcc44ee0946a592dee0483a,
         type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 107.3
       objectReference: {fileID: 0}
     - target: {fileID: 3942033548537719538, guid: 48be284d4dcc44ee0946a592dee0483a,
         type: 3}
