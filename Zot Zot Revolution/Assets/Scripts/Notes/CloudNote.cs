@@ -36,7 +36,7 @@ public class CloudtNote : Note
             return;
         }
 
-        float alpha = Mathf.Clamp01((beatsToJudgement - 2) / 3);
+        float alpha = Mathf.Clamp01((beatsToJudgement - 1) / 3);
 
         SetImageAlpha(alpha);
     }
