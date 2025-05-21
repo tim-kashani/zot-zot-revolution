@@ -63,10 +63,14 @@ public class NoteDataCreator : MonoBehaviour
             {
                 noteType = 2;
             }
+            
+            var tempoMap = midiFile.GetTempoMap();
+            var timeDivision = midiFile.TimeDivision as TicksPerQuarterNoteTimeDivision;
+            int ticksPerQuarterNote = timeDivision?.TicksPerQuarterNote ?? 480;
 
-            float noteTime = note.Time / 480f;
+            float noteTime = note.Time / (float)ticksPerQuarterNote;
 
-            float noteLength = note.Length / 480f;
+            float noteLength = note.Length / (float)ticksPerQuarterNote;
 
             Debug.Log("Note at " + noteTime + " time and " + noteTrack + " number and " + noteType + " note type and " + noteLength / 480 + " length");
 
