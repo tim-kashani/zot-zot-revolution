@@ -27,6 +27,13 @@ public class CloudtNote : Note
         noteOffset.anchoredPosition = new(CalculateXPosition(x), 0);
     }
 
+    protected override void NoteStart()
+    {
+        base.NoteStart();
+
+        cloudImage.color = music.GetSongData().noteColor;
+    }
+
     private void Update()
     {
         float beatsToJudgement = pressTime - music.GetCurrentBeat();
@@ -45,6 +52,6 @@ public class CloudtNote : Note
     {
         Debug.Log("Alpha: " + f);
 
-        cloudImage.color = new(1, 1, 1, f);
+        cloudImage.color = new(cloudImage.color.r, cloudImage.color.g, cloudImage.color.b, f);
     }
 }
