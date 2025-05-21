@@ -24,7 +24,12 @@ public class Music : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        songData = testSongData;
+        songData = GameStateManager.GetSongData();
+
+        if (songData == null)
+        {
+            songData = testSongData;
+        }
 
         audioSource = GetComponent<AudioSource>();
 

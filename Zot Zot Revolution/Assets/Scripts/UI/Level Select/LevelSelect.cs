@@ -154,6 +154,8 @@ public class LevelSelect : MonoBehaviour
 
     IEnumerator LoadLevel(SongData songData)
     {
+        GameStateManager.SetSongData(songData);
+
         yield return new WaitForSeconds(2);
 
         SceneManager.LoadScene("Game");
