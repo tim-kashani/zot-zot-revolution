@@ -195,7 +195,7 @@ public class NoteManager : MonoBehaviour
 
         if (audienceBounce < 1)
         {
-            audienceBounce += Time.deltaTime / 2;
+            audienceBounce += Time.deltaTime;
 
             if (audienceBounce > 1)
             {
@@ -209,7 +209,7 @@ public class NoteManager : MonoBehaviour
 
             characterBounce.BeatBounce();
 
-            audienceBounce = 0.75f;
+            audienceBounce = 0.9f;
         }
 
         float y = music.GetCurrentBeat() * Note.ySpacing * -1;
@@ -234,7 +234,7 @@ public class NoteManager : MonoBehaviour
             currentNoteIndex++;
         }
 
-        currentAudienceBounce = Mathf.Lerp(currentAudienceBounce, audienceBounce, Time.deltaTime * 5f);
+        currentAudienceBounce = Mathf.Lerp(currentAudienceBounce, audienceBounce, Time.deltaTime * 10);
 
         for (int i = 0; i < audience.Length; i++)
         {
