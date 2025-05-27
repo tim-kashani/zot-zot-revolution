@@ -73,6 +73,13 @@ public class LevelSelect : MonoBehaviour
         StartCoroutine(LoadLevel(currentSongData));
     }
 
+    public void BackButton()
+    {
+        fadeAnimator.Play("Out");
+
+        StartCoroutine(Back());
+    }
+
     void SetLevelNameText(string levelName, string composerName)
     {
         // TODO add rich text
@@ -159,5 +166,12 @@ public class LevelSelect : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         SceneManager.LoadScene("Game");
+    }
+
+    IEnumerator Back()
+    {
+        yield return new WaitForSeconds(2);
+
+        SceneManager.LoadScene("Title Screen");
     }
 }
