@@ -78,6 +78,8 @@ public class NoteManager : MonoBehaviour
 
     AudienceMember[] audience;
 
+    float audienceBounce, currentAudienceBounce;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -191,11 +193,23 @@ public class NoteManager : MonoBehaviour
             return;
         }
 
+        if (audienceBounce < 1)
+        {
+            audienceBounce += Time.deltaTime / 2;
+
+            if (audienceBounce > 1)
+            {
+                audienceBounce = 1;
+            }
+        }
+
         if (currentBeatInt != (int)music.GetCurrentBeat())
         {
             currentBeatInt = (int)music.GetCurrentBeat();
 
             characterBounce.BeatBounce();
+
+            audienceBounce = 0.75f;
         }
 
         float y = music.GetCurrentBeat() * Note.ySpacing * -1;
@@ -218,6 +232,13 @@ public class NoteManager : MonoBehaviour
             SpawnNote(currentNoteIndex);
 
             currentNoteIndex++;
+        }
+
+        currentAudienceBounce = Mathf.Lerp(currentAudienceBounce, audienceBounce, Time.deltaTime * 5f);
+
+        for (int i = 0; i < audience.Length; i++)
+        {
+            audience[i].SetScale(currentAudienceBounce);
         }
     }
 
