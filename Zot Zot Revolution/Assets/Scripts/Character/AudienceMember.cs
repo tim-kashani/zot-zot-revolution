@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class AudienceMember : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Material material;
 
     public void SetScale(float scale)
     {
         transform.localScale = new(1, scale, 1);
+    }
+
+    public void SetTexture(Texture2D texture)
+    {
+        material.SetTexture("_Texture2D", texture);
     }
 }

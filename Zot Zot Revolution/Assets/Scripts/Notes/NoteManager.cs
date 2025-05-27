@@ -57,6 +57,9 @@ public class NoteManager : MonoBehaviour
     [Header("Sound Effects")]
     [SerializeField] AudioClip hitSFX;
 
+    [Header("Audience")]
+    [SerializeField] Texture2D[] audienceTextures;
+
     Music music;
 
     float score, maxScore;
@@ -73,6 +76,8 @@ public class NoteManager : MonoBehaviour
 
     int currentBeatInt = -1;
 
+    AudienceMember[] audience;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,6 +91,13 @@ public class NoteManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         characterBounce = FindAnyObjectByType<CharacterBounce>();
+
+        audience = FindObjectsByType<AudienceMember>(FindObjectsSortMode.None);
+
+        for (int i = 0; i < audience.Length; i++)
+        {
+            audience[i].SetTexture(audienceTextures[Random.Range(0, audienceTextures.Length)]);
+        }
     }
 
     public void Spawn(List<Vector4> notes)
