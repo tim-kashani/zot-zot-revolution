@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudienceMember : MonoBehaviour
 {
-    [SerializeField] Material material;
+    [SerializeField] MeshRenderer meshRenderer;
 
     public void SetScale(float scale)
     {
@@ -13,6 +13,6 @@ public class AudienceMember : MonoBehaviour
 
     public void SetTexture(Texture2D texture)
     {
-        material.SetTexture("_Texture2D", texture);
+        meshRenderer.material.SetTexture("_Texture2D", texture);
     }
 }
