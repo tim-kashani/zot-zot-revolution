@@ -100,6 +100,8 @@ public class NoteManager : MonoBehaviour
         {
             audience[i].SetTexture(audienceTextures[Random.Range(0, audienceTextures.Length)]);
         }
+
+        audienceBounce = 1;
     }
 
     public void Spawn(List<Vector4> notes)
@@ -209,7 +211,7 @@ public class NoteManager : MonoBehaviour
 
             characterBounce.BeatBounce();
 
-            audienceBounce = 0.9f;
+            audienceBounce = 0.85f;
         }
 
         float y = music.GetCurrentBeat() * Note.ySpacing * -1;
@@ -234,7 +236,7 @@ public class NoteManager : MonoBehaviour
             currentNoteIndex++;
         }
 
-        currentAudienceBounce = Mathf.Lerp(currentAudienceBounce, audienceBounce, Time.deltaTime * 10);
+        currentAudienceBounce = Mathf.Lerp(currentAudienceBounce, audienceBounce, Time.deltaTime * 7.5f);
 
         for (int i = 0; i < audience.Length; i++)
         {
