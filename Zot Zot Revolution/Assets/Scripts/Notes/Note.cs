@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Note : MonoBehaviour
 {
     // this is for spacing notes equally from 1-4, can be changed but is static so it stays the same across notes
-    public static float xSpacing = 200, ySpacing = 250;
+    public static float xSpacing = 200, defaultYSpacing = 500;
 
     public int notePosition;
 
@@ -130,7 +130,7 @@ public class Note : MonoBehaviour
 
         RectTransform rectTransform = GetComponent<RectTransform>();
 
-        rectTransform.anchoredPosition = new(CalculateXPosition(x), y * ySpacing);
+        rectTransform.anchoredPosition = new(CalculateXPosition(x), y * GetYSpacing());
 
         pressTime = y;
     }
@@ -150,6 +150,11 @@ public class Note : MonoBehaviour
     public float GetPressTime()
     {
         return pressTime;
+    }
+
+    public static float GetYSpacing()
+    {
+        return defaultYSpacing * 1;
     }
 
     protected float CalculateXPosition(int i)

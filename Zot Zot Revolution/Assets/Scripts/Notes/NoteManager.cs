@@ -214,7 +214,7 @@ public class NoteManager : MonoBehaviour
             audienceBounce = 0.85f;
         }
 
-        float y = music.GetCurrentBeat() * Note.ySpacing * -1;
+        float y = music.GetCurrentBeat() * Note.GetYSpacing() * -1;
 
         noteParent.anchoredPosition = new(0, y);
 
