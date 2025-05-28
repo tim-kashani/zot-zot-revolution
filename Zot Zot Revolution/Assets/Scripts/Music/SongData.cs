@@ -15,6 +15,10 @@ public class SongData : ScriptableObject
 
     public AudioClip song;
 
+    public float volume = 1;
+
+    public float initialDelay;
+
     public string midiFilePath;
 
     public Sprite characterSprite;

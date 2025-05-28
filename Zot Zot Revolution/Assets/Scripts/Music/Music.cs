@@ -23,6 +23,10 @@ public class Music : MonoBehaviour
 
     NoteManager noteManager;
 
+    float time;
+
+    bool isDelayed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +72,21 @@ public class Music : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDelayed)
+        {
+            // when the song loops
+            if (audioSource.time < time)
+            {
+                isDelayed = false;
+            }
+
+            time = audioSource.time;
+
+            return;
+        }
+
+        time = audioSource.time;
+
         if ((audioSource.time + 2) >= audioSource.clip.length && !isFinished)
         {
             isFinished = true;
@@ -78,7 +97,24 @@ public class Music : MonoBehaviour
 
     public void StartMusic()
     {
+        float delay = songData.initialDelay;
+
+        if (delay > 0)
+        {
+            isDelayed = true;
+
+            Debug.Log("Delay: " + delay);
+        }
+
+        audioSource.volume = 0;
+
         audioSource.Play();
+
+        time = audioSource.clip.length - (delay * bpm / 60);
+
+        Debug.Log("Delay Time: " + time);
+
+        audioSource.time = time;
     }
 
     public void FinishLevel()
@@ -93,7 +129,11 @@ public class Music : MonoBehaviour
 
     public float GetCurrentBeat()
     {
-        return audioSource.time * bpm / 60;
+        float beat = audioSource.time * bpm / 60;
+
+        float delay = isDelayed ? (songData.initialDelay * bpm / 60) : 0;
+
+        return beat - delay;
     }
 
     public SongData GetSongData()
