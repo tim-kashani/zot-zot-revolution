@@ -134,16 +134,12 @@ public class Music : MonoBehaviour
 
     public float GetCurrentBeat()
     {
-        float beat = audioSource.time * bpm / 60;
-
-        float delay = isDelayed ? (songData.initialDelay * bpm / 60) : 0;
-
         if (isDelayed)
         {
-            return -delay;
+            return -delayTimer * bpm / 60;
         } else
         {
-            return beat;
+            return audioSource.time * bpm / 60;
         }
     }
 
