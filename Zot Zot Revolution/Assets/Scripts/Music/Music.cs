@@ -13,6 +13,8 @@ public class Music : MonoBehaviour
 
     [SerializeField] MeshRenderer character;
 
+    [SerializeField] Light light1, light2;
+
     AudioSource audioSource;
 
     NoteDataCreator noteDataCreator;
@@ -69,6 +71,10 @@ public class Music : MonoBehaviour
         noteManager = FindAnyObjectByType<NoteManager>();
 
         character.material.SetTexture("_Texture2D", songData.characterTexture);
+
+        light1.color = songData.light1Color;
+
+        light2.color = songData.light2Color;
     }
 
     // Update is called once per frame
