@@ -8,6 +8,8 @@ public class Visualizer : MonoBehaviour
 
     [SerializeField] LineRenderer lineRenderer;
 
+    [SerializeField] float intensity = 0.1f;
+
     float[] samples;
 
     Vector2[] positions;
@@ -38,7 +40,7 @@ public class Visualizer : MonoBehaviour
 
         for (int i = 0; i < lineRenderer.positionCount; i++)
         {
-            float f = 1 - samples[i];
+            float f = 1 - (samples[i] * intensity);
 
             lineRenderer.SetPosition(i, f * positions[i]);
         }
