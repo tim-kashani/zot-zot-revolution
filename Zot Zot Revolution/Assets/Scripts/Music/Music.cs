@@ -23,7 +23,7 @@ public class Music : MonoBehaviour
 
     NoteManager noteManager;
 
-    float time;
+    float delayTimer;
 
     bool isDelayed;
 
@@ -74,20 +74,17 @@ public class Music : MonoBehaviour
     {
         if (isDelayed)
         {
-            // when the song loops
-            if (audioSource.time < time)
+            delayTimer -= Time.deltaTime;
+
+            if (delayTimer <= 0)
             {
                 isDelayed = false;
+
+                PlayMusic();
             }
-
-            time = audioSource.time;
-
-            audioSource.volume = songData.volume;
 
             return;
         }
-
-        time = audioSource.time;
 
         if ((audioSource.time + 2) >= audioSource.clip.length && !isFinished)
         {
@@ -106,20 +103,23 @@ public class Music : MonoBehaviour
             isDelayed = true;
 
             Debug.Log("Delay: " + delay);
-
-            audioSource.volume = 0;
-        } else
-        {
-            audioSource.volume = songData.volume;
         }
 
+        audioSource.volume = songData.volume;
+
+        delayTimer = (delay * bpm / 60);
+
+        Debug.Log("Delay Timer: " + delayTimer);
+
+        if (delay <= 0)
+        {
+            PlayMusic();
+        }
+    }
+
+    void PlayMusic()
+    {
         audioSource.Play();
-
-        time = audioSource.clip.length - (delay * bpm / 60);
-
-        Debug.Log("Delay Time: " + time);
-
-        audioSource.time = time;
     }
 
     public void FinishLevel()
