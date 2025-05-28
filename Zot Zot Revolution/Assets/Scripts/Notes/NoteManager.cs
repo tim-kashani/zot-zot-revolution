@@ -215,7 +215,7 @@ public class NoteManager : MonoBehaviour
             {
                 characterBounce.BeatBounce();
 
-                audienceBounce = 0.85f;
+                audienceBounce = 0.75f;
             }
         }
 
@@ -338,7 +338,7 @@ public class NoteManager : MonoBehaviour
             return;
         }
 
-        if (note.GetPressTime() - music.GetCurrentBeat() > 0.5f)
+        if (note.GetPressTime() - music.GetCurrentBeat() > 1f)
         {
             return;
         }
