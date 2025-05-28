@@ -82,6 +82,8 @@ public class Music : MonoBehaviour
 
             time = audioSource.time;
 
+            audioSource.volume = songData.volume;
+
             return;
         }
 
@@ -104,9 +106,12 @@ public class Music : MonoBehaviour
             isDelayed = true;
 
             Debug.Log("Delay: " + delay);
-        }
 
-        audioSource.volume = 0;
+            audioSource.volume = 0;
+        } else
+        {
+            audioSource.volume = songData.volume;
+        }
 
         audioSource.Play();
 
@@ -133,7 +138,13 @@ public class Music : MonoBehaviour
 
         float delay = isDelayed ? (songData.initialDelay * bpm / 60) : 0;
 
-        return beat - delay;
+        if (isDelayed)
+        {
+            return beat;
+        } else
+        {
+            return -delay;
+        }
     }
 
     public SongData GetSongData()
