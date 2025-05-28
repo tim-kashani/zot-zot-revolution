@@ -22,7 +22,7 @@ public class CloudtNote : Note
 
         RectTransform rectTransform = GetComponent<RectTransform>();
 
-        rectTransform.anchoredPosition = new(0, y * ySpacing);
+        rectTransform.anchoredPosition = new(0, y * GetYSpacing());
 
         noteOffset.anchoredPosition = new(CalculateXPosition(x), 0);
     }

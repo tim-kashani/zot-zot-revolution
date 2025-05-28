@@ -333,6 +333,11 @@ public class NoteManager : MonoBehaviour
             return;
         }
 
+        if (note.GetPressTime() - music.GetCurrentBeat() <= -0.5f)
+        {
+            return;
+        }
+
         note.OnPress();
     }
 

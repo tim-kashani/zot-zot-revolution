@@ -91,7 +91,7 @@ public class SpamNote : Note
     {
         base.SetNoteLength(f);
 
-        maxYSpacing = f * ySpacing;
+        maxYSpacing = f * GetYSpacing();
 
         spamBarBG.sizeDelta = new(spamBar.sizeDelta.x, maxYSpacing);
 

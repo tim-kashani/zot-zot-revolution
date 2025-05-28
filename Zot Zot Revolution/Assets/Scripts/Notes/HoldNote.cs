@@ -89,7 +89,7 @@ public class HoldNote : Note
     {
         base.SetNoteLength(f);
 
-        maxYSpacing = f * ySpacing;
+        maxYSpacing = f * GetYSpacing();
 
         holdBarBG.sizeDelta = new(holdBar.sizeDelta.x, maxYSpacing);
 
