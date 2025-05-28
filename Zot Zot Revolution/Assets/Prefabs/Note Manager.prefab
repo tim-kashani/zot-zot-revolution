@@ -72,7 +72,13 @@ MonoBehaviour:
     type: 3}
   noteParent: {fileID: 0}
   scoreText: {fileID: 0}
+  maxScoreText: {fileID: 0}
+  hitTimingDisplayParent: {fileID: 0}
+  hitTimingDisplay: {fileID: 0}
+  trackBG: {fileID: 0}
   hitSFX: {fileID: 8300000, guid: 40f1bc118fd0e42be80ab95e1ec5a333, type: 3}
+  audienceTextures:
+  - {fileID: 2800000, guid: 04403e95992274644a44bdb3aa9ad287, type: 3}
 --- !u!114 &3067889994005355026
 MonoBehaviour:
   m_ObjectHideFlags: 0
