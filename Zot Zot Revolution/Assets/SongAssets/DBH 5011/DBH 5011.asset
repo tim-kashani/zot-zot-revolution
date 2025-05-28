@@ -17,7 +17,7 @@ MonoBehaviour:
   characterArtistName: Tim Kashani
   difficulty: Easy
   song: {fileID: 8300000, guid: a410f9678746c6549be6ad68ce9616ff, type: 3}
-  volume: 1
+  volume: 0.5
   initialDelay: 4
   midiFilePath: SongAssets/DBH 5011/DBH5011.mid
   characterSprite: {fileID: 21300000, guid: 086277d01f20a45138c1029711e359d8, type: 3}
@@ -36,7 +36,7 @@ MonoBehaviour:
   gradeDDialogue: uh i think you might needa train i think you can do it someday
     tho trust
   gradeFDialogue: 'dude you frickin suck at this game i cant even lie '
-  bgColor: {r: 0.5882353, g: 0.84313726, b: 1, a: 1}
+  bgColor: {r: 0, g: 0.1810162, b: 0.3773585, a: 1}
   trackColor: {r: 0, g: 0.3956368, b: 0.5754717, a: 0.88235295}
   trackBarColor: {r: 0.75, g: 0.87907004, b: 1, a: 1}
   noteColor: {r: 0.7122642, g: 0.8936103, b: 1, a: 1}
