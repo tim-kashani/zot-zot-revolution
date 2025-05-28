@@ -140,10 +140,10 @@ public class Music : MonoBehaviour
 
         if (isDelayed)
         {
-            return beat;
+            return -delay;
         } else
         {
-            return -delay;
+            return beat;
         }
     }
 
