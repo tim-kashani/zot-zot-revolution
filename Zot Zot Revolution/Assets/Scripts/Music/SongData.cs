@@ -56,4 +56,8 @@ public class SongData : ScriptableObject
     public Color noteBarColor = Color.gray;
 
     public Color noteIndicatorColor = Color.gray;
+
+    public Color light1Color = Color.white;
+
+    public Color light2Color = Color.white;
 }
