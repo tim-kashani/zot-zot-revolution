@@ -27,6 +27,8 @@ public class Music : MonoBehaviour
 
     bool isDelayed;
 
+    public float test;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +74,8 @@ public class Music : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        test = GetCurrentBeat();
+
         if (isDelayed)
         {
             delayTimer -= Time.deltaTime;
@@ -107,7 +111,7 @@ public class Music : MonoBehaviour
 
         audioSource.volume = songData.volume;
 
-        delayTimer = (delay * bpm / 60);
+        delayTimer = (delay * 60 / bpm);
 
         Debug.Log("Delay Timer: " + delayTimer);
 
