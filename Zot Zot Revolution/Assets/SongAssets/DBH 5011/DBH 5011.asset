@@ -37,7 +37,7 @@ MonoBehaviour:
     tho trust
   gradeFDialogue: 'dude you frickin suck at this game i cant even lie '
   bgColor: {r: 0.5882353, g: 0.84313726, b: 1, a: 1}
-  trackColor: {r: 0.38527945, g: 0.6014776, b: 0.6981132, a: 0.88235295}
+  trackColor: {r: 0, g: 0.3956368, b: 0.5754717, a: 0.88235295}
   trackBarColor: {r: 0.75, g: 0.87907004, b: 1, a: 1}
   noteColor: {r: 0.7122642, g: 0.8936103, b: 1, a: 1}
   noteBarColor: {r: 0.42653078, g: 0.56500244, b: 0.6698113, a: 1}
