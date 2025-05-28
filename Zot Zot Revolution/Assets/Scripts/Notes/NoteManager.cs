@@ -211,9 +211,12 @@ public class NoteManager : MonoBehaviour
         {
             currentBeatInt = (int)music.GetCurrentBeat();
 
-            characterBounce.BeatBounce();
+            if (currentBeatInt >= 0)
+            {
+                characterBounce.BeatBounce();
 
-            audienceBounce = 0.85f;
+                audienceBounce = 0.85f;
+            }
         }
 
         float y = music.GetCurrentBeat() * Note.GetYSpacing() * -1;
