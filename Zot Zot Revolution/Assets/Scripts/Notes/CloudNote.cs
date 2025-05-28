@@ -34,8 +34,19 @@ public class CloudtNote : Note
         cloudImage.color = music.GetSongData().noteColor;
     }
 
-    private void Update()
+    protected override void NoteUpdate()
     {
+        if (tooLate && !isRemoved)
+        {
+            Debug.Log("Too Late");
+
+            fadedOut = true;
+
+            RemoveNote();
+
+            return;
+        }
+
         float beatsToJudgement = pressTime - music.GetCurrentBeat();
 
         if (beatsToJudgement > 6)

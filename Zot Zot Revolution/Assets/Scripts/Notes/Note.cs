@@ -21,7 +21,7 @@ public class Note : MonoBehaviour
 
     protected Music music;
 
-    protected bool fadedOut, isRemoved;
+    protected bool fadedOut, isRemoved, tooLate;
 
     private void Start()
     {
@@ -41,8 +41,13 @@ public class Note : MonoBehaviour
 
     private void Update()
     {
-        bool tooLate = (noteManager.CalculateOffset(pressTime) > 0.5f) || (pressTime - music.GetCurrentBeat() <= -0.5f);
+        tooLate = (noteManager.CalculateOffset(pressTime) > 0.5f) || (pressTime - music.GetCurrentBeat() <= -0.5f);
 
+        NoteUpdate();
+    }
+
+    protected virtual void NoteUpdate()
+    {
         if (tooLate && !isRemoved)
         {
             Debug.Log("Too Late");

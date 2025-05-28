@@ -15,8 +15,19 @@ public class GhostNote : Note
 
     bool hasBeenPressed;
 
-    private void Update()
+    protected override void NoteUpdate()
     {
+        if (tooLate && !isRemoved)
+        {
+            Debug.Log("Too Late");
+
+            fadedOut = true;
+
+            RemoveNote();
+
+            return;
+        }
+
         if (hasBeenPressed)
         {
             return;

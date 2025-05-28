@@ -29,7 +29,7 @@ public class HoldNote : Note
         holdBarBG.GetComponent<Image>().color = music.GetSongData().noteBarColor;
     }
 
-    private void Update()
+    protected override void NoteUpdate()
     {
         float delta = music.GetCurrentBeat() - lastFrame;
 
@@ -37,7 +37,7 @@ public class HoldNote : Note
 
         if (!isBeingPressed)
         {
-            if (noteManager.CalculateOffset(pressTime) > 0.5f && !isRemoved)
+            if (tooLate && !isRemoved)
             {
                 Debug.Log("Too Late");
 

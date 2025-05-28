@@ -26,7 +26,7 @@ public class SpamNote : Note
         spamBarBG.GetComponent<Image>().color = music.GetSongData().noteBarColor;
     }
 
-    private void Update()
+    protected override void NoteUpdate()
     {
         float delta = music.GetCurrentBeat() - lastFrame;
 
@@ -34,6 +34,15 @@ public class SpamNote : Note
 
         if (!isBeingPressed)
         {
+            if (tooLate && !isRemoved)
+            {
+                Debug.Log("Too Late");
+
+                fadedOut = true;
+
+                RemoveNote();
+            }
+
             return;
         }
 
