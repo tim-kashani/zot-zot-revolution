@@ -102,6 +102,8 @@ public class NoteManager : MonoBehaviour
         }
 
         audienceBounce = 1;
+
+        currentAudienceBounce = 1;
     }
 
     public void Spawn(List<Vector4> notes)
