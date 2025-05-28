@@ -42,3 +42,5 @@ MonoBehaviour:
   noteColor: {r: 0.7122642, g: 0.8936103, b: 1, a: 1}
   noteBarColor: {r: 0.42653078, g: 0.56500244, b: 0.6698113, a: 1}
   noteIndicatorColor: {r: 0.31746173, g: 0.4490875, b: 0.5471698, a: 1}
+  light1Color: {r: 0.6933962, g: 0.8693233, b: 1, a: 1}
+  light2Color: {r: 1, g: 1, b: 1, a: 1}
