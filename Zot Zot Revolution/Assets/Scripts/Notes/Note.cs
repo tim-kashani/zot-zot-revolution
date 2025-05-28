@@ -95,6 +95,11 @@ public class Note : MonoBehaviour
         StartCoroutine(WaitToDestroy());
 
         isRemoved = true;
+
+        if (tooLate)
+        {
+            noteManager.SpawnTimingDisplay(NoteManager.HitTiming.MISS);
+        }
     }
 
     public float CalculateScoreMultiplier(float f)

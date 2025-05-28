@@ -448,7 +448,7 @@ public class NoteManager : MonoBehaviour
         maxScoreText.text = "Max Score (Testing): " + maxScore.ToString("00000");
     }
 
-    void SpawnTimingDisplay(HitTiming hitTiming)
+    public void SpawnTimingDisplay(HitTiming hitTiming)
     {
         HitTimingDisplay display = Instantiate(hitTimingDisplay, hitTimingDisplayParent);
 
