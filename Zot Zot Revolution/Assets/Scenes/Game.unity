@@ -167,6 +167,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d76bcb30ec44007b09acee0bf637b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &190328237 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8568470099545048491, guid: 1a623f828722843b38afa4d6c7bb713a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5037557216614071170}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &199301775 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4945370710122620724, guid: 1a623f828722843b38afa4d6c7bb713a,
@@ -1865,7 +1877,7 @@ PrefabInstance:
     - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
         type: 3}
       propertyPath: trackImages.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
         type: 3}
@@ -1882,6 +1894,11 @@ PrefabInstance:
       propertyPath: trackImages.Array.data[1]
       value: 
       objectReference: {fileID: 1457534453}
+    - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
+        type: 3}
+      propertyPath: trackImages.Array.data[2]
+      value: 
+      objectReference: {fileID: 190328237}
     - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
         type: 3}
       propertyPath: trackBarImages.Array.data[0]
