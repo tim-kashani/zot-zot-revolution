@@ -40,3 +40,5 @@ MonoBehaviour:
   noteIndicatorColor: {r: 0.44332588, g: 0.1517444, b: 0.5849056, a: 1}
   light1Color: {r: 0.6039216, g: 0, b: 0.5568628, a: 1}
   light2Color: {r: 1, g: 1, b: 0, a: 1}
+  gradient1Color: {r: 0.54509807, g: 0, b: 1, a: 1}
+  gradient2Color: {r: 1, g: 1, b: 0, a: 1}
