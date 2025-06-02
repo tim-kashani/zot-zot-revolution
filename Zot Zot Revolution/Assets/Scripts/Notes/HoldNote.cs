@@ -78,6 +78,8 @@ public class HoldNote : Note
                     noteManager.AddScore(maxHoldPoints - currentHoldPoints);
                 }
 
+                tooLate = false;
+
                 RemoveNote();
 
                 return;
@@ -119,6 +121,19 @@ public class HoldNote : Note
         base.OnRelease();
 
         isBeingPressed = false;
+
+        float remainingPoints = maxHoldPoints - currentHoldPoints;
+
+        if (remainingPoints <= 50 && remainingPoints > 0)
+        {
+            currentHoldPoints += remainingPoints;
+
+            noteManager.AddScore(remainingPoints);
+
+            holdBar.sizeDelta = new(holdBar.sizeDelta.x, maxYSpacing);
+        }
+
+        tooLate = false;
 
         RemoveNote();
     }

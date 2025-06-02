@@ -55,6 +55,8 @@ public class SpamNote : Note
 
         if (spamTimer <= 0)
         {
+            tooLate = false;
+
             RemoveNote();
 
             return;
@@ -88,6 +90,8 @@ public class SpamNote : Note
                 {
                     noteManager.AddScore(maxHoldPoints - currentHoldPoints);
                 }
+
+                tooLate = false;
 
                 RemoveNote();
 
