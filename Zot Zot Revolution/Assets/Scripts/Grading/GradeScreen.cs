@@ -21,6 +21,11 @@ public class GradeScreen : MonoBehaviour
     {
         songData = GameStateManager.GetSongData();
 
+        if (songData == null)
+        {
+            songData = new();
+        }
+
         character.sprite = songData.characterSprite;
 
         grade = GameStateManager.GetGrade();
@@ -63,7 +68,7 @@ public class GradeScreen : MonoBehaviour
                 return songData.gradeFDialogue;
         }
 
-        return "";
+        return "Erm this dialogue is not supposed to happen";
     }
 
     IEnumerator Grade()
@@ -80,7 +85,7 @@ public class GradeScreen : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
 
         scoreText.gameObject.SetActive(true);
 
@@ -100,17 +105,21 @@ public class GradeScreen : MonoBehaviour
             int i = (int)Mathf.Lerp(0f, score, f);
 
             scoreText.text = "Score: " + i.ToString("00000");
+
+            yield return new WaitForEndOfFrame();
         }
-
-        yield return new WaitForSeconds(0.5f);
-
-        gradeLetterText.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(0.5f);
 
         gradeText.gameObject.SetActive(true);
 
-        gradeText.text = grade.ToString();
+        yield return new WaitForSeconds(0.5f);
+
+        gradeLetterText.gameObject.SetActive(true);
+
+        gradeLetterText.text = grade.ToString();
+
+        yield return new WaitForSeconds(1);
 
         character.gameObject.SetActive(true);
 
