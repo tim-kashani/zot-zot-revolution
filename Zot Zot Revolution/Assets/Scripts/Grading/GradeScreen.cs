@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GradeScreen : MonoBehaviour
 {
     [SerializeField] Image character;
 
     [SerializeField] TMP_Text scoreText, gradeText, gradeLetterText, dialogueText;
+
+    [SerializeField] GameObject returnButton;
+
+    [SerializeField] Animator fadeAnimator;
 
     SongData songData;
 
@@ -39,6 +44,11 @@ public class GradeScreen : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ReturnButton()
+    {
+        StartCoroutine(Fade());
     }
 
     string GetDialogue()
@@ -85,6 +95,8 @@ public class GradeScreen : MonoBehaviour
 
         character.gameObject.SetActive(false);
 
+        returnButton.SetActive(false);
+
         yield return new WaitForEndOfFrame();
 
         yield return new WaitForSeconds(1.5f);
@@ -128,5 +140,18 @@ public class GradeScreen : MonoBehaviour
         dialogueText.gameObject.SetActive(true);
 
         dialogueText.text = GetDialogue();
+
+        yield return new WaitForSeconds(1);
+
+        returnButton.SetActive(true);
+    }
+
+    IEnumerator Fade()
+    {
+        fadeAnimator.Play("Out");
+
+        yield return new WaitForSeconds(2);
+
+        SceneManager.LoadScene("Level Select");
     }
 }
