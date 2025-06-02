@@ -476,6 +476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1283102149}
+  - component: {fileID: 1283102150}
   m_Layer: 0
   m_Name: Grade Screen
   m_TagString: Untagged
@@ -498,6 +499,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1283102150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283102148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5aebcd25acd4302bfd5f557adaaa5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 1074932579}
+  scoreText: {fileID: 2064511854}
+  gradeText: {fileID: 1474090842}
+  gradeLetterText: {fileID: 1217851202}
+  dialogueText: {fileID: 736434513}
 --- !u!1 &1292176241
 GameObject:
   m_ObjectHideFlags: 0
