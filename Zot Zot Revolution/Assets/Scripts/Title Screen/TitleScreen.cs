@@ -20,7 +20,7 @@ public class TitleScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioListener.volume = 1;
     }
 
     // Update is called once per frame
@@ -81,7 +81,7 @@ public class TitleScreen : MonoBehaviour
 
     IEnumerator FadeMusic()
     {
-        float f = music.volume;
+        float f = 1;
 
         while (f > 0)
         {
@@ -92,7 +92,7 @@ public class TitleScreen : MonoBehaviour
                 f = 0;
             }
 
-            music.volume = f;
+            AudioListener.volume = f;
 
             yield return new WaitForEndOfFrame();
         }
