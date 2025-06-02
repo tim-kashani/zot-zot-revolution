@@ -19,6 +19,8 @@ public class LevelSelect : MonoBehaviour
 
     [SerializeField] Animator fadeAnimator;
 
+    [SerializeField] AudioSource music;
+
     int currentSongIndex;
 
     float currentRotation, lerpedRotation;
@@ -71,6 +73,8 @@ public class LevelSelect : MonoBehaviour
         fadeAnimator.Play("Out");
 
         StartCoroutine(LoadLevel(currentSongData));
+
+        StartCoroutine(FadeMusic());
     }
 
     public void BackButton()
@@ -78,6 +82,8 @@ public class LevelSelect : MonoBehaviour
         fadeAnimator.Play("Out");
 
         StartCoroutine(Back());
+
+        StartCoroutine(FadeMusic());
     }
 
     void SetLevelNameText(string levelName, string composerName)
@@ -173,5 +179,24 @@ public class LevelSelect : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         SceneManager.LoadScene("Title Screen");
+    }
+
+    IEnumerator FadeMusic()
+    {
+        float f = music.volume;
+
+        while (f > 0)
+        {
+            f -= Time.deltaTime / 2;
+
+            if (f < 0)
+            {
+                f = 0;
+            }
+
+            music.volume = f;
+
+            yield return new WaitForEndOfFrame();
+        }
     }
 }

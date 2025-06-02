@@ -65,6 +65,11 @@ public class TitleScreen : MonoBehaviour
         StartCoroutine(StartButtonCoroutine());
     }
 
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
+
     IEnumerator StartButtonCoroutine()
     {
         yield return new WaitForSeconds(2);
