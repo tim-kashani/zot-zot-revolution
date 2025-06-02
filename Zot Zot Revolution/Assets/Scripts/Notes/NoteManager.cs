@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class NoteManager : MonoBehaviour
 {
@@ -53,6 +54,8 @@ public class NoteManager : MonoBehaviour
     [SerializeField] HitTimingDisplay hitTimingDisplay;
 
     [SerializeField] RectTransform trackBG;
+
+    [SerializeField] Animator fadeAnimator;
 
     [Header("Sound Effects")]
     [SerializeField] AudioClip hitSFX;
@@ -460,6 +463,19 @@ public class NoteManager : MonoBehaviour
         display.SetHitTiming(hitTiming);
     }
 
+    public void Finish()
+    {
+        LetterGrade letterGrade = GetLetterGrade();
+
+        Debug.Log("Finished level with a grade of " + letterGrade);
+
+        GameStateManager.SetGrade(letterGrade);
+
+        GameStateManager.SetScore((int)score);
+
+        StartCoroutine(Fade());
+    }
+
     public float CalculateOffset(float beat)
     {
         float offset = music.GetCurrentBeat() - beat;
@@ -495,5 +511,14 @@ public class NoteManager : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         music.StartMusic();
+    }
+
+    IEnumerator Fade()
+    {
+        fadeAnimator.Play("Out");
+
+        yield return new WaitForSeconds(2);
+
+        SceneManager.LoadScene("Grade");
     }
 }
