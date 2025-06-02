@@ -584,6 +584,8 @@ MonoBehaviour:
   gradeText: {fileID: 1474090842}
   gradeLetterText: {fileID: 1217851202}
   dialogueText: {fileID: 736434513}
+  returnButton: {fileID: 1833248786}
+  fadeAnimator: {fileID: 1489761718}
 --- !u!1 &1292176241
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,6 +982,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1489761716}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1489761718 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5337679014560824305, guid: ac3809804c6fb492e9b8310854be7362,
+    type: 3}
+  m_PrefabInstance: {fileID: 1489761716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1525407118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,11 +1107,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Return Button
       objectReference: {fileID: 0}
-    - target: {fileID: 1640055347931100783, guid: 48be284d4dcc44ee0946a592dee0483a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3376965392249943519, guid: 48be284d4dcc44ee0946a592dee0483a,
         type: 3}
       propertyPath: m_text
@@ -1217,6 +1220,12 @@ PrefabInstance:
 --- !u!224 &1833248785 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3942033548537719538, guid: 48be284d4dcc44ee0946a592dee0483a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1833248784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1833248786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1640055347931100783, guid: 48be284d4dcc44ee0946a592dee0483a,
     type: 3}
   m_PrefabInstance: {fileID: 1833248784}
   m_PrefabAsset: {fileID: 0}
