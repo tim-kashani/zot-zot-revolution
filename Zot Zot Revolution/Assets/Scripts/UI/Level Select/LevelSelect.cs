@@ -30,6 +30,8 @@ public class LevelSelect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioListener.volume = 1;
+
         SpawnLevelButtons();
 
         SelectLevel(songDatas[0]);
