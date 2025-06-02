@@ -134,7 +134,9 @@ public class Music : MonoBehaviour
 
     public void FinishLevel()
     {
-        Debug.Log("Finished level with a grade of " + noteManager.GetLetterGrade());
+        NoteManager.LetterGrade letterGrade = noteManager.GetLetterGrade();
+
+        Debug.Log("Finished level with a grade of " + letterGrade);
     }
 
     public float GetBPM()
