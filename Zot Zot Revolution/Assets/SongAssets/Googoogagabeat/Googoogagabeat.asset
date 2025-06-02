@@ -17,6 +17,8 @@ MonoBehaviour:
   characterArtistName: 
   difficulty: Easy
   song: {fileID: 8300000, guid: b14b160605b19465cbfbe715bef9b3b0, type: 3}
+  volume: 1
+  initialDelay: 4
   midiFilePath: SongAssets/Swag/Swag.mid
   characterSprite: {fileID: 21300000, guid: f859c5f2341044e71b8e0828c39bac8c, type: 3}
   characterTexture: {fileID: 2800000, guid: f859c5f2341044e71b8e0828c39bac8c, type: 3}
@@ -36,3 +38,5 @@ MonoBehaviour:
   noteColor: {r: 1, g: 1, b: 1, a: 1}
   noteBarColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   noteIndicatorColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  light1Color: {r: 1, g: 1, b: 1, a: 1}
+  light2Color: {r: 1, g: 1, b: 1, a: 1}
