@@ -234,6 +234,13 @@ public class NoteManager : MonoBehaviour
 
         trackBG.anchoredPosition = new(0, bgSpacing);
 
+        currentAudienceBounce = Mathf.Lerp(currentAudienceBounce, audienceBounce, Time.deltaTime * 7.5f);
+
+        for (int i = 0; i < audience.Length; i++)
+        {
+            audience[i].SetScale(currentAudienceBounce);
+        }
+
         if (currentNoteIndex >= noteList.Count)
         {
             return;
@@ -244,13 +251,6 @@ public class NoteManager : MonoBehaviour
             SpawnNote(currentNoteIndex);
 
             currentNoteIndex++;
-        }
-
-        currentAudienceBounce = Mathf.Lerp(currentAudienceBounce, audienceBounce, Time.deltaTime * 7.5f);
-
-        for (int i = 0; i < audience.Length; i++)
-        {
-            audience[i].SetScale(currentAudienceBounce);
         }
     }
 
