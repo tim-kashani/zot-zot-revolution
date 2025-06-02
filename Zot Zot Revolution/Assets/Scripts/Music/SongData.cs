@@ -60,4 +60,8 @@ public class SongData : ScriptableObject
     public Color light1Color = Color.white;
 
     public Color light2Color = Color.white;
+
+    public Color gradient1Color = Color.gray;
+
+    public Color gradient2Color = Color.white;
 }
