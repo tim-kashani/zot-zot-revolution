@@ -86,6 +86,8 @@ public class NoteManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioListener.volume = 1;
+
         music = FindAnyObjectByType<Music>();
 
         // testing

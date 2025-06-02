@@ -1246,6 +1246,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1239530276}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1276821663 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4951516027989301049, guid: 1a623f828722843b38afa4d6c7bb713a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5037557216614071170}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1325175495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2691,6 +2697,11 @@ PrefabInstance:
       propertyPath: noteParent
       value: 
       objectReference: {fileID: 5037557216614071171}
+    - target: {fileID: 3953121921298516487, guid: 33d6b97b68a2247549cc5b68d13aeeaf,
+        type: 3}
+      propertyPath: fadeAnimator
+      value: 
+      objectReference: {fileID: 1276821663}
     - target: {fileID: 3953121921298516487, guid: 33d6b97b68a2247549cc5b68d13aeeaf,
         type: 3}
       propertyPath: maxScoreText

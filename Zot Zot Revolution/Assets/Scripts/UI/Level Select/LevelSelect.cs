@@ -183,7 +183,7 @@ public class LevelSelect : MonoBehaviour
 
     IEnumerator FadeMusic()
     {
-        float f = music.volume;
+        float f = 1;
 
         while (f > 0)
         {
@@ -194,7 +194,7 @@ public class LevelSelect : MonoBehaviour
                 f = 0;
             }
 
-            music.volume = f;
+            AudioListener.volume = f;
 
             yield return new WaitForEndOfFrame();
         }
