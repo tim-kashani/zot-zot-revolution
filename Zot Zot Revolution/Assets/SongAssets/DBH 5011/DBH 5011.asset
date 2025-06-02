@@ -15,7 +15,7 @@ MonoBehaviour:
   songName: DBH 5011
   composerName: Darren Go
   characterArtistName: Tim Kashani
-  difficulty: Easy
+  difficulty: Hard
   song: {fileID: 8300000, guid: a410f9678746c6549be6ad68ce9616ff, type: 3}
   volume: 0.5
   initialDelay: 4
