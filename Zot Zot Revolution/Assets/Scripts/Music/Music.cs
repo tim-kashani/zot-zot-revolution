@@ -11,9 +11,11 @@ public class Music : MonoBehaviour
 
     [SerializeField] Image[] trackImages, noteIndicatorImages, trackBarImages;
 
-    [SerializeField] MeshRenderer character;
+    [SerializeField] MeshRenderer character, sign;
 
     [SerializeField] Light light1, light2;
+
+    [SerializeField] LineRenderer visualizer;
 
     AudioSource audioSource;
 
@@ -75,6 +77,14 @@ public class Music : MonoBehaviour
         light1.color = songData.light1Color;
 
         light2.color = songData.light2Color;
+
+        sign.material.SetColor("_Color_1", songData.gradient1Color);
+
+        sign.material.SetColor("_Color_2", songData.gradient2Color);
+
+        visualizer.material.SetColor("_Color_1", songData.gradient1Color);
+
+        visualizer.material.SetColor("_Color_2", songData.gradient2Color);
     }
 
     // Update is called once per frame

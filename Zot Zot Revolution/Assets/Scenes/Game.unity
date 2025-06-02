@@ -1345,6 +1345,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c5a31510ea6f4e7baaac6897f08a203, type: 3}
+--- !u!23 &1325175496 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 8c5a31510ea6f4e7baaac6897f08a203,
+    type: 3}
+  m_PrefabInstance: {fileID: 1325175495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1457534453 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8353147399417885767, guid: 1a623f828722843b38afa4d6c7bb713a,
@@ -3081,6 +3087,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
         type: 3}
+      propertyPath: sign
+      value: 
+      objectReference: {fileID: 1325175496}
+    - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
+        type: 3}
       propertyPath: light1
       value: 
       objectReference: {fileID: 342426923}
@@ -3099,6 +3110,11 @@ PrefabInstance:
       propertyPath: trackImage
       value: 
       objectReference: {fileID: 2028567318}
+    - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
+        type: 3}
+      propertyPath: visualizer
+      value: 
+      objectReference: {fileID: 2133690630}
     - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
         type: 3}
       propertyPath: testSongData
