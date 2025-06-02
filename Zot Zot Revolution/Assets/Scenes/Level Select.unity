@@ -1222,6 +1222,7 @@ MonoBehaviour:
   levelPanel: {fileID: 1357996704}
   characterImage: {fileID: 365970653}
   fadeAnimator: {fileID: 1190040881}
+  music: {fileID: 790372092}
 --- !u!1 &824423388
 GameObject:
   m_ObjectHideFlags: 0
