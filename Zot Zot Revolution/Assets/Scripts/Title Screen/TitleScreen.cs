@@ -63,6 +63,8 @@ public class TitleScreen : MonoBehaviour
         fadeAnimator.Play("Out");
 
         StartCoroutine(StartButtonCoroutine());
+
+        StartCoroutine(FadeMusic());
     }
 
     public void QuitButton()
@@ -75,5 +77,24 @@ public class TitleScreen : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         SceneManager.LoadScene("Level Select");
+    }
+
+    IEnumerator FadeMusic()
+    {
+        float f = music.volume;
+
+        while (f > 0)
+        {
+            f -= Time.deltaTime / 2;
+
+            if (f < 0)
+            {
+                f = 0;
+            }
+
+            music.volume = f;
+
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
