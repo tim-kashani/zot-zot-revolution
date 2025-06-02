@@ -314,8 +314,27 @@ public class NoteManager : MonoBehaviour
         SendNoteInput(5, v.isPressed);
     }
 
+    public void OnPause(InputValue v)
+    {
+        if (v.isPressed)
+        {
+            if (music.IsPaused())
+            {
+                music.Unpause();
+            } else
+            {
+                music.Pause();
+            }
+        }
+    }
+
     void SendNoteInput(int i, bool isPressed)
     {
+        if (music.IsPaused())
+        {
+            return;
+        }
+
         if (isPressed)
         {
             PressNote(i);

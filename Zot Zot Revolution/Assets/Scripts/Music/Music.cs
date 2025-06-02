@@ -27,7 +27,7 @@ public class Music : MonoBehaviour
 
     float delayTimer;
 
-    bool isDelayed;
+    bool isDelayed, paused;
 
     public float test;
 
@@ -96,7 +96,7 @@ public class Music : MonoBehaviour
             return;
         }
 
-        if ((audioSource.time + 2) >= audioSource.clip.length && !isFinished)
+        if ((audioSource.time + 0.01f) >= audioSource.clip.length && !isFinished)
         {
             isFinished = true;
 
@@ -135,6 +135,25 @@ public class Music : MonoBehaviour
     public void FinishLevel()
     {
         noteManager.Finish();
+    }
+
+    public void Pause()
+    {
+        paused = true;
+
+        audioSource.Pause();
+    }
+
+    public void Unpause()
+    {
+        paused = false;
+
+        audioSource.UnPause();
+    }
+
+    public bool IsPaused()
+    {
+        return paused;
     }
 
     public float GetBPM()
