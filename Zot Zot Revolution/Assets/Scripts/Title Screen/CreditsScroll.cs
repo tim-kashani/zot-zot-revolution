@@ -6,7 +6,7 @@ public class CreditsScroll : MonoBehaviour
 {
     [SerializeField] RectTransform text;
 
-    float max = 2400;
+    float max = 2450;
 
     // Start is called before the first frame update
     void Start()

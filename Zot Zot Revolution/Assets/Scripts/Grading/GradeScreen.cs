@@ -30,6 +30,8 @@ public class GradeScreen : MonoBehaviour
 
         grade = GameStateManager.GetGrade();
 
+        score = GameStateManager.GetScore();
+
         StartCoroutine(Grade());
     }
 
