@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class CreditsScroll : MonoBehaviour
 {
+    [SerializeField] RectTransform text;
+
+    float max = 2400;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        text.anchoredPosition = new(0, -max);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Scroll(float f)
     {
-        
+        float y = Mathf.Lerp(-max, max, f);
+
+        text.anchoredPosition = new(0, y);
     }
 }
