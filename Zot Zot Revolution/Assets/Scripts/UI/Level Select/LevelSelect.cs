@@ -11,7 +11,7 @@ public class LevelSelect : MonoBehaviour
 
     [SerializeField] LevelSelectButton levelSelectButton;
 
-    [SerializeField] TMP_Text levelNameText, dialogueText;
+    [SerializeField] TMP_Text levelNameText, dialogueText, difficultyText, scoreText, missesText, gradeText;
 
     [SerializeField] RectTransform levelButtonParent, levelPanel;
 
@@ -68,6 +68,16 @@ public class LevelSelect : MonoBehaviour
         }
 
         StartCoroutine(SwitchLevelPanel(currentSongData));
+
+        difficultyText.text = "Difficulty: " + songData.difficulty;
+
+        FileManager.LevelSave save = FileManager.GetLevelSave(songData.songName);
+
+        scoreText.text = "Score: " + save.score;
+
+        missesText.text = "Misses: " + save.misses;
+
+        gradeText.text = save.grade.ToString();
     }
 
     public void StartButton()

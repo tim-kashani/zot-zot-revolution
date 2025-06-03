@@ -58,7 +58,16 @@ public class FileManager : MonoBehaviour
 
         save.misses = PlayerPrefs.GetInt(levelName + " Misses");
 
-        save.grade = PlayerPrefs.GetString(levelName + " Grade")[0];
+        string grade = PlayerPrefs.GetString(levelName + " Grade");
+
+        char c = '?';
+
+        if (grade.Length == 1)
+        {
+            c = grade[0];
+        }
+
+        save.grade = c;
 
         return save;
     }
