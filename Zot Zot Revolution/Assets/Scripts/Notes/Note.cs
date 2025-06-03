@@ -115,7 +115,7 @@ public class Note : MonoBehaviour
         // should hit 0 if offset is greater than 0.525 seconds
         float abs = Mathf.Abs(offset * 2);
 
-        float subtraction = abs - 0.05f;
+        float subtraction = abs - 0.1f;
 
         if (subtraction < 0)
         {
