@@ -35,6 +35,7 @@ public class HitTimingDisplay : MonoBehaviour
             NoteManager.HitTiming.GREAT => "Great",
             NoteManager.HitTiming.GOOD => "Good",
             NoteManager.HitTiming.OK => "OK",
+            NoteManager.HitTiming.OFF => "OFF",
             NoteManager.HitTiming.MISS => "Miss",
             _ => "",
         };

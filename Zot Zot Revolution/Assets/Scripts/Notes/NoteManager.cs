@@ -9,7 +9,7 @@ public class NoteManager : MonoBehaviour
 {
     public enum HitTiming
     {
-        PERFECT, GREAT, GOOD, OK, MISS
+        PERFECT, GREAT, GOOD, OK, OFF, MISS
     }
 
     public enum LetterGrade
@@ -425,13 +425,18 @@ public class NoteManager : MonoBehaviour
         {
             hitTiming = HitTiming.GREAT;
 
-            if (multiplier < 0.95f)
+            if (multiplier < 0.9f)
             {
                 hitTiming = HitTiming.GOOD;
 
-                if (multiplier < 0.9f)
+                if (multiplier < 0.8f)
                 {
                     hitTiming = HitTiming.OK;
+
+                    if (multiplier < 0.7f)
+                    {
+                        hitTiming = HitTiming.OFF;
+                    }
                 }
             }
         }
