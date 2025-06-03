@@ -112,7 +112,7 @@ public class Note : MonoBehaviour
         float offset = noteManager.CalculateOffset(f);
 
         // points falloff
-        // should hit 0 if offset is greater than 0.525 seconds
+        // should hit 0 if offset is greater than 0.55 seconds
         float abs = Mathf.Abs(offset * 2);
 
         float subtraction = abs - 0.1f;
