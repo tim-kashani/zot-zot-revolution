@@ -10,6 +10,8 @@ public class FileManager : MonoBehaviour
 
         public int score;
 
+        public int misses;
+
         public char grade;
     }
 
@@ -31,6 +33,21 @@ public class FileManager : MonoBehaviour
         }
     }
 
+    public static void SaveLevel(LevelSave save)
+    {
+        // if saved score is higher, don't save the new score
+        if (PlayerPrefs.GetInt(save.levelName + " Score") > save.score)
+        {
+            return;
+        }
+
+        PlayerPrefs.SetInt(save.levelName + " Score", save.score);
+
+        PlayerPrefs.SetInt(save.levelName + " Misses", save.misses);
+
+        PlayerPrefs.SetString(save.levelName + " Grade", save.grade.ToString());
+    }
+
     public static LevelSave GetLevelSave(string levelName)
     {
         LevelSave save = new();
@@ -38,6 +55,8 @@ public class FileManager : MonoBehaviour
         save.levelName = levelName;
 
         save.score = PlayerPrefs.GetInt(levelName + " Score");
+
+        save.misses = PlayerPrefs.GetInt(levelName + " Misses");
 
         save.grade = PlayerPrefs.GetString(levelName + " Grade")[0];
 
