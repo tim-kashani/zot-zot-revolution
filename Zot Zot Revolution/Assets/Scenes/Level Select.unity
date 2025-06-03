@@ -1348,6 +1348,10 @@ MonoBehaviour:
     type: 3}
   levelNameText: {fileID: 953613395}
   dialogueText: {fileID: 885869988}
+  difficultyText: {fileID: 26703093}
+  scoreText: {fileID: 1113342486}
+  missesText: {fileID: 1864674975}
+  gradeText: {fileID: 564413269}
   levelButtonParent: {fileID: 1824681604}
   levelPanel: {fileID: 1357996704}
   characterImage: {fileID: 365970653}

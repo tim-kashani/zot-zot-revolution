@@ -73,7 +73,7 @@ public class LevelSelect : MonoBehaviour
 
         FileManager.LevelSave save = FileManager.GetLevelSave(songData.songName);
 
-        scoreText.text = "Score: " + save.score;
+        scoreText.text = "Score: " + save.score.ToString("00000");
 
         missesText.text = "Misses: " + save.misses;
 
