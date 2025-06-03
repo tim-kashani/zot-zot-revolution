@@ -83,6 +83,8 @@ public class NoteManager : MonoBehaviour
 
     float audienceBounce, currentAudienceBounce;
 
+    int misses;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -487,6 +489,11 @@ public class NoteManager : MonoBehaviour
         HitTimingDisplay display = Instantiate(hitTimingDisplay, hitTimingDisplayParent);
 
         display.SetHitTiming(hitTiming);
+
+        if (hitTiming == HitTiming.MISS)
+        {
+            misses++;
+        }
     }
 
     public void Finish()
@@ -498,6 +505,16 @@ public class NoteManager : MonoBehaviour
         GameStateManager.SetGrade(letterGrade);
 
         GameStateManager.SetScore((int)score);
+
+        FileManager.LevelSave save = new();
+
+        save.levelName = GameStateManager.GetSongData().songName;
+
+        save.score = (int)score;
+
+        save.misses = misses;
+
+        save.grade = letterGrade.ToString()[0];
 
         StartCoroutine(Fade());
     }
