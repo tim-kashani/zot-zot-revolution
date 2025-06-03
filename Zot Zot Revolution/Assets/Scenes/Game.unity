@@ -191,6 +191,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &338261508 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2654966207839945183, guid: 1a623f828722843b38afa4d6c7bb713a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5037557216614071170}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &342426922
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +693,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618530221}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &624650542 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7327606929026756560, guid: 1a623f828722843b38afa4d6c7bb713a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5037557216614071170}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &680327417 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1426821703414141275, guid: 1a623f828722843b38afa4d6c7bb713a,
@@ -3129,7 +3153,7 @@ PrefabInstance:
     - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
         type: 3}
       propertyPath: trackBarImages.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
         type: 3}
@@ -3171,6 +3195,16 @@ PrefabInstance:
       propertyPath: trackBarImages.Array.data[4]
       value: 
       objectReference: {fileID: 1508519326}
+    - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
+        type: 3}
+      propertyPath: trackBarImages.Array.data[5]
+      value: 
+      objectReference: {fileID: 624650542}
+    - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
+        type: 3}
+      propertyPath: trackBarImages.Array.data[6]
+      value: 
+      objectReference: {fileID: 338261508}
     - target: {fileID: 4212659552790266457, guid: a4f472bd30f4e4ea7a8ec6261399d64d,
         type: 3}
       propertyPath: noteIndicatorImages.Array.size

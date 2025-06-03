@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Music : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Music : MonoBehaviour
     [SerializeField] Light light1, light2;
 
     [SerializeField] LineRenderer visualizer;
+
+    [SerializeField] TMP_Text[] inputIndicators;
 
     AudioSource audioSource;
 
@@ -185,5 +188,33 @@ public class Music : MonoBehaviour
     public SongData GetSongData()
     {
         return songData;
+    }
+
+    IEnumerator FadeIndicators()
+    {
+        yield return new WaitForEndOfFrame();
+
+        yield return new WaitForEndOfFrame();
+
+        yield return new WaitForSeconds(1);
+
+        float f = 1;
+
+        while (f > 0)
+        {
+            f -= Time.deltaTime / 3;
+
+            if (f < 0)
+            {
+                f = 0;
+            }
+
+            for (int i = 0; i < inputIndicators.Length; i++)
+            {
+                inputIndicators[i].color = new(1, 1, 1, f);
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
