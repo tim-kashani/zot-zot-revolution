@@ -88,6 +88,8 @@ public class Music : MonoBehaviour
         visualizer.material.SetColor("_Color_1", songData.gradient1Color);
 
         visualizer.material.SetColor("_Color_2", songData.gradient2Color);
+
+        StartCoroutine(FadeIndicators());
     }
 
     // Update is called once per frame
