@@ -15,7 +15,7 @@ MonoBehaviour:
   songName: Three4Three
   composerName: Shreshth Sarin
   characterArtistName: 
-  difficulty: 
+  difficulty: Medium
   song: {fileID: 8300000, guid: 698973657f94f47e5b507286118d90f3, type: 3}
   volume: 1
   initialDelay: 4
