@@ -476,7 +476,7 @@ public class NoteManager : MonoBehaviour
 
     void UpdateScoreText()
     {
-        scoreText.text = "Score: " + score.ToString("00000");
+        scoreText.text = "Score: " + ((int)score).ToString("00000");
     }
 
     void UpdateMaxScoreText()
