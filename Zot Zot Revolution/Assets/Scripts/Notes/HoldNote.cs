@@ -124,7 +124,7 @@ public class HoldNote : Note
 
         float remainingPoints = maxHoldPoints - currentHoldPoints;
 
-        if (remainingPoints <= 50 && remainingPoints > 0)
+        if (remainingPoints <= 25 && remainingPoints > 0)
         {
             currentHoldPoints += remainingPoints;
 

@@ -117,7 +117,7 @@ public class SpamNote : Note
 
     public override void OnPress()
     {
-        spamTimer = 0.33f;
+        spamTimer = 0.25f;
 
         if (!isBeingPressed)
         {
