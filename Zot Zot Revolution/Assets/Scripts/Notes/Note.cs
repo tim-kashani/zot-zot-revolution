@@ -218,6 +218,8 @@ public class Note : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
+        Destroy(noteImage.gameObject);
+
         Destroy(gameObject);
     }
 }
