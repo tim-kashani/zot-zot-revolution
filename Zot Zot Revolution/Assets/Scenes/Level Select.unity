@@ -2495,7 +2495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This note will become invisible when you need to pres it.
+  m_text: This note will become invisible when you need to press it.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bbb1d2d4bab514a52a53d206c0bbe5dd, type: 2}
   m_sharedMaterial: {fileID: 3844310231216375460, guid: bbb1d2d4bab514a52a53d206c0bbe5dd,
@@ -2984,7 +2984,7 @@ PrefabInstance:
     - target: {fileID: 3942033548537719538, guid: 48be284d4dcc44ee0946a592dee0483a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 709
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 3942033548537719538, guid: 48be284d4dcc44ee0946a592dee0483a,
         type: 3}
