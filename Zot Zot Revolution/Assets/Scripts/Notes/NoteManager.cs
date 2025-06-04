@@ -516,6 +516,8 @@ public class NoteManager : MonoBehaviour
 
         save.grade = letterGrade.ToString()[0];
 
+        FileManager.SaveLevel(save);
+
         StartCoroutine(Fade());
     }
 
