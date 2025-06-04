@@ -27,6 +27,8 @@ public class LevelSelect : MonoBehaviour
 
     SongData currentSongData;
 
+    bool hasBeatenLevel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +80,8 @@ public class LevelSelect : MonoBehaviour
         missesText.text = "Misses: " + save.misses;
 
         gradeText.text = save.grade.ToString();
+
+        hasBeatenLevel = save.grade == 'S' || save.grade == 'A' || save.grade == 'B' || save.grade == 'C';
     }
 
     public void StartButton()
@@ -158,7 +162,7 @@ public class LevelSelect : MonoBehaviour
 
         characterImage.sprite = songData.characterSprite;
 
-        dialogueText.text = songData.unbeatenLevelSelectDialogue;
+        dialogueText.text = hasBeatenLevel ? songData.beatenLevelSelectDialogue : songData.unbeatenLevelSelectDialogue;
 
         while (f > 0)
         {

@@ -23,15 +23,18 @@ MonoBehaviour:
   characterSprite: {fileID: 21300000, guid: f859c5f2341044e71b8e0828c39bac8c, type: 3}
   characterTexture: {fileID: 2800000, guid: f859c5f2341044e71b8e0828c39bac8c, type: 3}
   bpm: 125
-  characterName: 
-  unbeatenLevelSelectDialogue: 
-  beatenLevelSelectDialogue: 
-  gradeSDialogue: 
-  gradeADialogue: 
-  gradeBDialogue: 
-  gradeCDialogue: 
-  gradeDDialogue: 
-  gradeFDialogue: 
+  characterName: Big Cinna
+  unbeatenLevelSelectDialogue: 'Ooooo ready bro? I bet you''re ready lesgo cmon '
+  beatenLevelSelectDialogue: yo why areyou playin this level again you should check
+    out the other songs unless you beat those ones too already
+  gradeSDialogue: whaaaaat the hecky dude howd you do that man
+  gradeADialogue: Ate. Chomped, even. Perhaps even munched. One might say you gobbled,
+    in fact.
+  gradeBDialogue: nice job good goin good stuff bro nice pretty solid quite good
+    proud of ya
+  gradeCDialogue: i mean it's alright i mean it's alright
+  gradeDDialogue: yo yo yo you suck suck suck man
+  gradeFDialogue: "WAAAHHHHHHHHHHH \U0001F62D"
   bgColor: {r: 1, g: 1, b: 1, a: 1}
   trackColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.88235295}
   trackBarColor: {r: 1, g: 1, b: 1, a: 1}
