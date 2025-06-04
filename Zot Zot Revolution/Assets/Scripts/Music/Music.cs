@@ -97,6 +97,14 @@ public class Music : MonoBehaviour
     {
         test = GetCurrentBeat();
 
+        // bruh
+        if (audioSource.time >= audioSource.clip.length && !isFinished && !paused)
+        {
+            isFinished = true;
+
+            FinishLevel();
+        }
+
         if (isDelayed)
         {
             delayTimer -= Time.deltaTime;
