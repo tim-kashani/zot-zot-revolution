@@ -56,7 +56,9 @@ public class Music : MonoBehaviour
 
         noteDataCreator = FindAnyObjectByType<NoteDataCreator>();
 
-        noteDataCreator.ReadMidiFile(Application.dataPath + "/" + songData.midiFilePath);
+        //noteDataCreator.ReadMidiFile(Application.dataPath + "/" + songData.midiFilePath);
+
+        noteDataCreator.DontRead(songData.notes);
 
         foreach (Image trackImage in trackImages)
         {
