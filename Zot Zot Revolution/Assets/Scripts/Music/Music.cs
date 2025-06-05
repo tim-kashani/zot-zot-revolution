@@ -20,6 +20,8 @@ public class Music : MonoBehaviour
 
     [SerializeField] TMP_Text[] inputIndicators;
 
+    [SerializeField] GameObject pauseMenu;
+
     AudioSource audioSource;
 
     NoteDataCreator noteDataCreator;
@@ -165,6 +167,8 @@ public class Music : MonoBehaviour
         paused = true;
 
         audioSource.Pause();
+
+        pauseMenu.SetActive(true);
     }
 
     public void Unpause()
@@ -172,6 +176,8 @@ public class Music : MonoBehaviour
         paused = false;
 
         audioSource.UnPause();
+
+        pauseMenu.SetActive(false);
     }
 
     public bool IsPaused()

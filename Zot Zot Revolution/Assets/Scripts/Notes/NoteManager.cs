@@ -67,7 +67,7 @@ public class NoteManager : MonoBehaviour
 
     float score, maxScore;
 
-    List<Vector4> noteList;
+    public List<Vector4> noteList;
 
     int currentNoteIndex;
 
@@ -521,6 +521,11 @@ public class NoteManager : MonoBehaviour
         StartCoroutine(Fade());
     }
 
+    public void QuitLevel()
+    {
+        StartCoroutine(FadeQuit());
+    }
+
     public float CalculateOffset(float beat)
     {
         float offset = music.GetCurrentBeat() - beat;
@@ -565,5 +570,14 @@ public class NoteManager : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         SceneManager.LoadScene("Grade");
+    }
+
+    IEnumerator FadeQuit()
+    {
+        fadeAnimator.Play("Out");
+
+        yield return new WaitForSeconds(2);
+
+        SceneManager.LoadScene("Level Select");
     }
 }

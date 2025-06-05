@@ -7,6 +7,8 @@ public class SongData : ScriptableObject
 {
     public string songName;
 
+    public List<Vector4> notes;
+
     public string composerName;
 
     public string characterArtistName;
