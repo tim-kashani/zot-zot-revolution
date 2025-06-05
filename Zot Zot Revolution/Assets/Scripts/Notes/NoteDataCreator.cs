@@ -32,6 +32,15 @@ public class NoteDataCreator : MonoBehaviour
         StartCoroutine(Wait());
     }
 
+    public void DontRead(List<Vector4> v)
+    {
+        vectors = v;
+
+        StartCoroutine(DontReadFile());
+
+        Debug.Log("Yo mama");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -96,6 +105,17 @@ public class NoteDataCreator : MonoBehaviour
         ConvertMidiToVectors();
 
         yield return new WaitForSeconds(0.1f);
+
+        NoteManager noteManager = FindAnyObjectByType<NoteManager>();
+
+        noteManager.Spawn(vectors);
+    }
+
+    IEnumerator DontReadFile()
+    {
+        Debug.Log("Waiting");
+
+        yield return new WaitForSeconds(1);
 
         NoteManager noteManager = FindAnyObjectByType<NoteManager>();
 
